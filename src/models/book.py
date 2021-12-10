@@ -1,5 +1,5 @@
-from src.models.author import Author
-from src.models.publisher import Publisher
+from models.author import Author
+from models.publisher import Publisher
 
 class Book:
     def __init__(

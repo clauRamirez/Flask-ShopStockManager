@@ -1,9 +1,9 @@
-from src.models.author import Author
-from src.models.book import Book
-from src.models.publisher import Publisher
-from src.repositories import author_repository
-from src.repositories import book_repository
-from src.repositories import publisher_repository
+from models.author import Author
+from models.book import Book
+from models.publisher import Publisher
+from repositories import author_repository
+from repositories import book_repository
+from repositories import publisher_repository
 
 author_repository.delete_all()
 publisher_repository.delete_all()

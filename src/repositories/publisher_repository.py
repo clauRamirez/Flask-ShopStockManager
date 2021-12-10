@@ -1,9 +1,9 @@
-from src.db.run_sql import run_sql as query
-from src.models.publisher import Publisher
+from db.run_sql import run_sql
+from models.publisher import Publisher
 from typing import List
 
 def delete_all() -> None:
-    query(
+    run_sql(
         sql="DELETE FROM publishers"
     )
 
@@ -16,14 +16,14 @@ def select_all() -> List[Publisher]:
             salesperson=row['salesperson'],
             contact=row['contact'],
             id=row['id']
-        ) for row in query(
+        ) for row in run_sql(
             sql="SELECT * FROM publishers"
         )
     ]
 
 
 def save(publisher: Publisher) -> None:
-    results = query(
+    results = run_sql(
         sql="\
             INSERT INTO publishers(name, website, salesperson, contact) \
             VALUES (%s, %s, %s, %s) RETURNING *;",

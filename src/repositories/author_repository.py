@@ -1,10 +1,10 @@
-from src.db.run_sql import run_sql as query
-from src.models.author import Author
+from db.run_sql import run_sql
+from models.author import Author
 from typing import List
 
 
 def delete_all() -> None:
-    query(
+    run_sql(
         sql="DELETE FROM authors"
     )
 
@@ -14,14 +14,14 @@ def select_all() -> List[Author]:
         Author(
             name=row['name'],
             id=row['id']
-        ) for row in query(
+        ) for row in run_sql(
             sql="SELECT * FROM authors"
         )
     ]
 
 
 def save(author: Author) -> None:
-    results = query(
+    results = run_sql(
         sql="\
             INSERT INTO authors(name) \
             VALUES (%s) RETURNING *;",

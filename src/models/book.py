@@ -29,6 +29,6 @@ class Book:
         self.stock = stock
         self.id = id
         
-    def get_mark_up(self):
+    def get_mark_up(self) -> float:
         return round(self.price - self.stock, 2)
     

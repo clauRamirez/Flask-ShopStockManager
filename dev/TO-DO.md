@@ -24,7 +24,7 @@
 - [ ] Authors repository
 - [ ] Publishers repository
 - [ ] Books repository
-- [ ] Populate database
+- [x] Populate database
 
 #### TEMPLATES
 - [ ] base.html
@@ -42,13 +42,13 @@
 - [ ] Display information properly
 - [ ] Style
 
-### Brainstorming
+### Brainstorming
 
 #### SQL
 
 - ON DELETE CASCADE on FOREIGN KEYS only
 
-#### CSS
+#### CSS
 
 - Make items have a colour depending on genre
 - Make items have a border colour to show low stock
@@ -57,6 +57,8 @@
 
 - unittest
 - flask
+- typing
+- psycopg2
 
 ### Possible extensions
 

@@ -15,12 +15,12 @@
 
 #### SETUP
 - [x] Push to git
-- [ ] Create directories and files
+- [x] Create directories and files
 - [ ] README.md
 
 #### DB AND MODELS
-- [ ] Database
-- [ ] Models
+- [x] Database
+- [x] Models
 - [ ] Authors repository
 - [ ] Publishers repository
 - [ ] Books repository

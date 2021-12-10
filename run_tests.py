@@ -1,6 +1,6 @@
 import unittest
 
-# Import tests from ./tests below
+from tests.book_test import TestBook
 
 if __name__ == '__main__':
     unittest.main()

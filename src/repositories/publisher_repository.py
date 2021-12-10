@@ -1,14 +1,14 @@
 from src.db.run_sql import run_sql as query
 from src.models.publisher import Publisher
-
+from typing import List
 
 def delete_all() -> None:
     query(
-        sql="DELETE FROM authors"
+        sql="DELETE FROM publishers"
     )
 
 
-def select_all() -> list(Publisher):
+def select_all() -> List[Publisher]:
     return [
         Publisher(
             name=row['name'],
@@ -17,7 +17,7 @@ def select_all() -> list(Publisher):
             contact=row['contact'],
             id=row['id']
         ) for row in query(
-            sql="SELECT * FROM authors"
+            sql="SELECT * FROM publishers"
         )
     ]
 

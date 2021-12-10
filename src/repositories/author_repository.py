@@ -1,5 +1,6 @@
 from src.db.run_sql import run_sql as query
 from src.models.author import Author
+from typing import List
 
 
 def delete_all() -> None:
@@ -8,7 +9,7 @@ def delete_all() -> None:
     )
 
 
-def select_all() -> list(Author):
+def select_all() -> List[Author]:
     return [
         Author(
             name=row['name'],
@@ -22,7 +23,7 @@ def select_all() -> list(Author):
 def save(author: Author) -> None:
     results = query(
         sql="\
-            INSERT INTO publishers(name) \
+            INSERT INTO authors(name) \
             VALUES (%s) RETURNING *;",
         values=[author.name]
     )

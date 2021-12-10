@@ -16,6 +16,7 @@
 #### SETUP
 - [x] Push to git
 - [ ] Create directories and files
+- [ ] README.md
 
 #### DB AND MODELS
 - [ ] Database

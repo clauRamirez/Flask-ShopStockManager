@@ -4,20 +4,20 @@ from models.publisher import Publisher
 class Book:
     def __init__(
         self,
-        ISBN: int,
-        title: str,
-        genre: str,
-        author: Author,
-        illustrator: Author,
-        publisher: Publisher,
-        edition: int,
-        cost: float,
-        price: float,
-        stock: int,
-        id: int = None
+        isbn,
+        title,
+        genre,
+        author,
+        illustrator,
+        publisher,
+        edition,
+        cost,
+        price,
+        stock,
+        id = None
     ):
     
-        self.ISBN = ISBN
+        self.isbn = isbn
         self.title = title
         self.genre = genre
         self.author = author
@@ -30,5 +30,5 @@ class Book:
         self.id = id
         
     def get_mark_up(self) -> float:
-        return round(self.price - self.cost, 2)
+        return round(self.price - self.stock, 2)
     

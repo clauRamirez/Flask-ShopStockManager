@@ -24,7 +24,7 @@
 - [ ] Authors repository
 - [ ] Publishers repository
 - [ ] Books repository
-- [x] Populate database
+- [ ] Populate database
 
 #### TEMPLATES
 - [ ] base.html
@@ -42,13 +42,15 @@
 - [ ] Display information properly
 - [ ] Style
 
-### Brainstorming
+### Brainstorming
+
+- ISBN is integer but it needs to also accept leading 0 so figure that out
 
 #### SQL
 
 - ON DELETE CASCADE on FOREIGN KEYS only
 
-#### CSS
+#### CSS
 
 - Make items have a colour depending on genre
 - Make items have a border colour to show low stock
@@ -57,8 +59,6 @@
 
 - unittest
 - flask
-- typing
-- psycopg2
 
 ### Possible extensions
 

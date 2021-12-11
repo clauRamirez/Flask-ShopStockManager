@@ -17,14 +17,15 @@ CREATE TABLE publishers (
 
 CREATE TABLE books (
     id SERIAL PRIMARY KEY,
-    ISBN INT NOT NULL,
+    isbn VARCHAR(255) NOT NULL,
     title VARCHAR(255) NOT NULL,
     genre VARCHAR(255) NOT NULL,
     author_id INT REFERENCES authors(id) ON DELETE CASCADE NOT NULL,
     illustrator_id INT REFERENCES authors(id) ON DELETE CASCADE NOT NULL,
     publisher_id INT REFERENCES publishers(id) ON DELETE CASCADE NOT NULL,
     edition INT NOT NULL,
-    cost INT NOT NULL,
-    price INT NOT NULL,
+    cost NUMERIC NOT NULL,
+    price NUMERIC NOT NULL,
     stock INT NOT NULL
 );
+

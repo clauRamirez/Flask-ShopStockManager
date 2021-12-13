@@ -36,7 +36,7 @@
 - [x] Import blueprint and register them in app.py
 - [x] Authors controllers
 - [x] Publishers controllers
-- [ ] Books controllers
+- [x] Books controllers
 
 #### TEMPLATES
 - [ ] Display information properly
@@ -44,6 +44,9 @@
 
 ### Brainstorming
 
+- Pass title variable into every route
+- Make request.form and other flask variables into shorter versions
+i.e rf for request.form etc if they're repeated through app
 - Make salesperson to be empty if not needed instead of the "no salesperson
 ordern from website" thing, and make the app render that into browser 
 whenever salesperson == none or something. this will free space from database

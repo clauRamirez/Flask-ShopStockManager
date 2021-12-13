@@ -1,5 +1,23 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    
+<a href="{{ request.referrer }}">Back</a>
+<ul>
+    <li>{{ book.isbn }}</li>
+    <li>{{ book.title }}</li>
+    <li>{{ book.genre }}</li>
+    <li>{{ book.author.name }}</li>
+    <li>{{ book.illustrator.name }} (Illutrator)</li>
+    <li>{{ book.publisher.name }}</li>
+    <li>{{ book.edition }}</li>
+    <li>£{{ book.cost }}</li>
+    <li>£{{ book.price }}</li>
+    <li>{{ book.stock }}</li>
+</ul>
+    <a href="{{ request.path }}/edit">Edit</a>
+<form action=" {{ request.path }}/delete " method='POST' >
+    <input type="submit" value="Delete">
+</form>
+
+
 {% endblock  %}

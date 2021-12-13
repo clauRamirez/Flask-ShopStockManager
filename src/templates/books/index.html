@@ -2,4 +2,21 @@
 
 {% block content %}
     <h1>BOOKS INDEX</h1>
+    <a href="{{ request.path }}/new">New</a>
+    {% for book in books %}
+    <ul>
+        <li><a href="{{ request.path }}/{{ book.id }}">{{ book.isbn }}</a></li>
+        <li>{{ book.title }}</li>
+        <li>{{ book.genre }}</li>
+        <li>{{ book.author.name }}</li>
+        <li>{{ book.illustrator.name }} (Illutrator)</li>
+        <li>{{ book.publisher.name }}</li>
+        <li>{{ book.edition }}</li>
+        <li>£{{ book.cost }}</li>
+        <li>£{{ book.price }}</li>
+        <li>{{ book.stock }}</li>
+    </ul>
+    <hr>
+    {% endfor %}
+
 {% endblock  %}

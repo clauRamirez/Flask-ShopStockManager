@@ -1,4 +1,59 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
+<form action="{{ request.referrer }}" method="POST">
+    <h3>Book:</h3>
+    
+    <label for="isbn">ISBN:</label>
+    <input type="text" name="isbn" id="isbn" value="{{ book.isbn }}" required autofocus>
+
+    <label for="title">Title:</label>
+    <input type="text" name="title" id="title" value="{{ book.title }}" required>
+
+    <label for="genre">Genre:</label>
+    <input type="text" name="genre" id="genre" value="{{ book.genre }}" required>
+
+    <label for="author_id">Author:</label>
+    <select id="author_id" name="author_id" required>   
+    {% for author in authors %}
+        <option value="{{ author.id }}" {% if book.author.id == author.id %}
+            selected
+        {% endif %} >{{ author.name }}</option>
+    {% endfor %} 
+    </select>  
+
+    <label for="illustrator_id">Illustrator:</label>
+    <select id="illustrator_id" name="illustrator_id" value="{{ book.illustrator }}" required>
+    {% for illustrator in illustrators %}
+        <option value="{{ illustrator.id }}" {% if book.illustrator.id == illustrator.id %}
+            selected
+        {% endif %} >{{ illustrator.name }}</option>
+    {% endfor %} 
+    </select> 
+
+    <label for="publisher_id">Publisher:</label>
+    <select id="publisher_id" name="publisher_id" value="{{ book.publisher }}" required>   
+    {% for publisher in publishers %}
+        <option value="{{ publisher.id }}" {% if book.publisher.id == publisher.id %}
+            selected
+        {% endif %} >{{ publisher.name }}</option>
+    {% endfor %} 
+    </select> 
+
+    <label for="edition">Edition:</label>
+    <input type="number" name="edition" id="edition" value="{{ book.edition }}" required>
+
+    <label for="cost">Cost:</label>
+    <input type="number" step="0.01" name="cost" id="cost" value="{{ book.cost }}" required>
+
+    <label for="price">Price:</label>
+    <input type="number" step="0.01" name="price" id="price" value="{{ book.price }}" required>
+
+    <label for="stock">Stock:</label>
+    <input type="number" name="stock" id="stock" value="{{ book.stock }}" required>
+
+    <input type="submit" value="Add">
+</form>
+
 {% endblock  %}

@@ -5,12 +5,7 @@ from repositories import book_repository, author_repository, publisher_repositor
 
 books_blueprint = Blueprint("books", __name__)
 
-# Title is not appearing in subdirectories i.e: /books/new etc
 _title = "Books"
-
-@books_blueprint.context_processor
-def inject_title():
-    return dict(title=_title)
 
 
 @books_blueprint.route("/books", methods=['GET', 'POST'])
@@ -55,8 +50,6 @@ def books_new():
     )
 
 
-# SHOW   -> GET '/books/<id>'
-# UPDATE -> POST(PUT) '/books/<id>'
 @books_blueprint.route("/books/<int:id>", methods=['GET', 'POST'])
 def books_id(id):
     if request.method == 'GET':
@@ -86,12 +79,11 @@ def books_id(id):
         return redirect("/books")
 
 
-# EDIT -> GET '/books/<id>/edit'
 @books_blueprint.route("/books/<int:id>/edit", methods=['GET'])
 def books_edit(id):
     authors = author_repository.select_all()
+    
     return render_template(
-        # this needs to change
         "/books/edit.html",
         book=book_repository.select(id),
         authors=authors,
@@ -101,8 +93,7 @@ def books_edit(id):
     )
 
 
-# DELETE -> POST(DELETE) '/books/<id>'
-@books_blueprint.route("/books/<id>/delete", methods=['POST'])
+@books_blueprint.route("/books/<int:id>/delete", methods=['POST'])
 def books_delete(id):
     book_repository.delete(id)
     return redirect('/books')

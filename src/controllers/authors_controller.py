@@ -5,7 +5,6 @@ from repositories import author_repository
 
 authors_blueprint = Blueprint("authors", __name__)
 
-# Title is not appearing in subdirectories i.e: /authors/new etc
 _title = "Authors"
 
 @authors_blueprint.route("/authors", methods=['GET', 'POST'])
@@ -31,8 +30,6 @@ def authors_new():
     )
 
 
-# SHOW   -> GET '/books/<id>'
-# UPDATE -> POST(PUT) '/books/<id>'
 @authors_blueprint.route("/authors/<int:id>", methods=['GET', 'POST'])
 def authors_id(id):
     if request.method == 'GET':
@@ -51,19 +48,16 @@ def authors_id(id):
         return redirect("/authors")
 
 
-# EDIT -> GET '/books/<id>/edit'
 @authors_blueprint.route("/authors/<int:id>/edit", methods=['GET'])
 def authors_edit(id):
     return render_template(
-        # this needs to change
         "/authors/edit.html",
         author=author_repository.select(id),
         title=_title,
     )
 
 
-# DELETE -> POST(DELETE) '/authors/<id>'
-@authors_blueprint.route("/authors/<id>/delete", methods=['POST'])
+@authors_blueprint.route("/authors/<int:id>/delete", methods=['POST'])
 def authors_delete(id):
     author_repository.delete(id)
     return redirect('/authors')

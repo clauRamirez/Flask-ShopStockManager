@@ -5,7 +5,6 @@ from repositories import publisher_repository
 
 publishers_blueprint = Blueprint("publishers", __name__)
 
-# Title is not appearing in subdirectories i.e: /authors/new etc
 _title = 'Publishers'
 
 @publishers_blueprint.route("/publishers", methods=['GET', 'POST'])
@@ -18,23 +17,24 @@ def publishers_index():
         )
         
     if request.method == 'POST':
+        rf = request.form
         # make this block less clunky
         # change Publisher constructor to salesperson=None, contact=None
         # make database store just null values, print 'no salesperson etc' in views only
-        if request.form['salesperson'] == '':
+        if rf['salesperson'] == '':
             publisher_repository.save(
                 Publisher(
-                    name=request.form['name'],
-                    website=request.form['website']
+                    name=rf['name'],
+                    website=rf['website']
                 )
             )
         else:
             publisher_repository.save(
                 Publisher(
-                    name=request.form['name'],
-                    website=request.form['website'],
-                    salesperson=request.form['salesperson'],
-                    contact=request.form['contact']
+                    name=rf['name'],
+                    website=rf['website'],
+                    salesperson=rf['salesperson'],
+                    contact=rf['contact']
                 )
             )
         return redirect("/publishers")
@@ -46,8 +46,6 @@ def publishers_new():
         "/publishers/new.html",
     )
 
-# SHOW   -> GET '/books/<id>'
-# UPDATE -> POST(PUT) '/books/<id>'
 @publishers_blueprint.route("/publishers/<int:id>", methods=['GET', 'POST'])
 def publishers_id(id):
     if request.method == 'GET':
@@ -57,32 +55,29 @@ def publishers_id(id):
             title=_title
         ) 
     if request.method == 'POST':
+        rf = request.form
         publisher_repository.update(
             Publisher(
-                name=request.form['name'],
-                website=request.form['website'],
-                salesperson=request.form['salesperson'],
-                contact=request.form['contact'],
+                name=rf['name'],
+                website=rf['website'],
+                salesperson=rf['salesperson'],
+                contact=rf['contact'],
                 id=id
             )
         )
         return redirect("/publishers")
 
 
-
-# EDIT -> GET '/books/<id>/edit'
 @publishers_blueprint.route("/publishers/<int:id>/edit", methods=['GET'])
 def publishers_edit(id):
     return render_template(
-        # this needs to change
         "/publishers/edit.html",
         publisher=publisher_repository.select(id),
         title=_title
     )
 
 
-# DELETE -> POST(DELETE) '/publishers/<id>'
-@publishers_blueprint.route("/publishers/<id>/delete", methods=['POST'])
+@publishers_blueprint.route("/publishers/<int:id>/delete", methods=['POST'])
 def publishers_delete(id):
     publisher_repository.delete(id)
     return redirect('/publishers')

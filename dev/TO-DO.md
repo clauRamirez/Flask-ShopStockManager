@@ -27,9 +27,9 @@
 - [x] Populate database
 
 #### TEMPLATES
-- [ ] base.html
-- [ ] style base.html
-- [ ] Create templates
+- [x] base.html
+- [x] style base.html
+- [x] Create templates
 
 ####  CONTROLLERS
 - [ ] Create blueprints

@@ -4,6 +4,9 @@ from flask import render_template
 app = Flask(__name__)
 
 # import controllers and blueprints below
+from controllers.authors_controller import authors_blueprint
+
+app.register_blueprint(authors_blueprint)
 
 @app.route('/')
 def index():

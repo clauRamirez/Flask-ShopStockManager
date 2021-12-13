@@ -22,9 +22,9 @@
 - [x] Database
 - [x] Models
 - [ ] Authors repository
-- [ ] Publishers repository
-- [ ] Books repository
-- [ ] Populate database
+- [x] Publishers repository
+- [x] Books repository
+- [x] Populate database
 
 #### TEMPLATES
 - [ ] base.html

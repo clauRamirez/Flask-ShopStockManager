@@ -6,9 +6,11 @@ app = Flask(__name__)
 # import controllers and blueprints below
 from controllers.authors_controller import authors_blueprint
 from controllers.books_controller import books_blueprint
+from controllers.publishers_controller import publishers_blueprint
 
 app.register_blueprint(authors_blueprint)
 app.register_blueprint(books_blueprint)
+app.register_blueprint(publishers_blueprint)
 
 @app.route('/')
 def index():

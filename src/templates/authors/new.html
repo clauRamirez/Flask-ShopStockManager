@@ -1,5 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    
+
+<a href="/authors">Back</a>
+
+<form action="/authors" method='POST'>
+    <h3>Author:</h3>
+    <label for="input">Name:</label>
+    <input type="text" name="name" id="name" required autofocus>
+    <input type="submit" value="Add">
+
+</form>
+
 {% endblock  %}

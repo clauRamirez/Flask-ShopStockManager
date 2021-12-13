@@ -6,10 +6,10 @@ import repositories.author_repository as author_repository
 
 authors_blueprint = Blueprint("authors", __name__)
 
-
+# Title is not appearing in subdirectories i.e: /authors/new etc
 _title = "Authors"
 
-@authors_blueprint.route("/authors", methods=['GET'])
+@authors_blueprint.route("/authors", methods=['GET', 'POST'])
 def authors_index():
     if request.method == 'GET':
         return render_template(
@@ -18,17 +18,16 @@ def authors_index():
             authors=author_repository.select_all()
         )
     if request.method == 'POST':
-        # CREATE (POST) RESTful method here
-        # return redirect("/authors") -> redirects to same route but with GET method
-        pass
+        author_repository.save(
+            Author(name=request.form['name'])
+        )
+        return redirect("/authors")        
 
 
-# NEW -> POST '/books/new'
 @authors_blueprint.route("/authors/new", methods=['GET'])
 def authors_new():
     return render_template(
         "/authors/new.html",
-        authors=author_repository.select_all()
     )
 
 
@@ -40,8 +39,7 @@ def authors_id(id):
         return render_template(
             "/authors/show.html",
             author=author_repository.select(id)
-        )
-        
+        ) 
     if request.method == 'POST':
         author_repository.update(
             Author(
@@ -53,19 +51,17 @@ def authors_id(id):
 
 
 # EDIT -> GET '/books/<id>/edit'
-@authors_blueprint.route("/authors/<id>/edit", methods=['GET'])
+@authors_blueprint.route("/authors/<int:id>/edit", methods=['GET'])
 def authors_edit(id):
     return render_template(
         # this needs to change
         "/authors/edit.html",
-        book=author_repository.select(id),
-        authors=author_repository.select_all()
+        author=author_repository.select(id)
     )
 
 
 # DELETE -> POST(DELETE) '/authors/<id>'
 @authors_blueprint.route("/authors/<id>/delete", methods=['POST'])
 def authors_delete(id):
-    # this needs to be checeked
     author_repository.delete(id)
     return redirect('/authors')

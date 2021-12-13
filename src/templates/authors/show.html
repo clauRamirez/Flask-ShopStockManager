@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<a href="/authors">Back</a>
+
+<h2> {{ author.name }} </h2>
+<a href="{{ request.path }}/edit">Edit</a>
+<form action=" {{ request.path }}/delete " method='POST' >
+    <input type="submit" value="Delete">
+</form>
+<h2>here add list of all books by author</h2>
+
+{% endblock  %}

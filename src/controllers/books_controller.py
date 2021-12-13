@@ -1,6 +1,6 @@
 from flask import render_template, redirect, request
 from flask import Blueprint
-from repositories import books_repository
+from repositories import book_repository
 
 books_blueprint = Blueprint("books", __name__)
 

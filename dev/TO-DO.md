@@ -34,8 +34,8 @@
 ####  CONTROLLERS
 - [x] Create blueprints
 - [x] Import blueprint and register them in app.py
-- [ ] Authors controllers
-- [ ] Publishers controllers
+- [x] Authors controllers
+- [x] Publishers controllers
 - [ ] Books controllers
 
 #### TEMPLATES
@@ -44,12 +44,19 @@
 
 ### Brainstorming
 
+- Make salesperson to be empty if not needed instead of the "no salesperson
+ordern from website" thing, and make the app render that into browser 
+whenever salesperson == none or something. this will free space from database
+and also we'll be able to change publishers_controller clunky bit
 - ISBN is integer but it needs to also accept leading 0 so figure that out
 - ISBN is a VARCHAR now but will it let it be the id and controllers
 accept it as param for searches????
 - Add models __repr__ and that stuff
 - Add errors and error handling
 - Add comments and docs
+- Create different jblocks and put in them repetitive stuff like the 
+go back button, form buttons and edit/delete buttons
+- Add custom 404
 
 #### SQL
 

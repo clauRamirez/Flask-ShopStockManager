@@ -35,7 +35,7 @@ def delete(id: int) -> None:
 def update(author: Author) -> None:
     run_sql(
         sql="\
-            UPDATE authors SET(name) = (%s) \
+            UPDATE authors SET(name) = ROW(%s) \
             WHERE id = %s;",
         values=[
             author.name,

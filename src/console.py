@@ -2,10 +2,10 @@ from models.author import Author
 from models.book import Book
 from models.publisher import Publisher
 from repositories import author_repository
-from repositories import book_repository
+from repositories import books_repository
 from repositories import publisher_repository
 
-book_repository.delete_all()
+books_repository.delete_all()
 author_repository.delete_all()
 publisher_repository.delete_all()
 
@@ -276,7 +276,7 @@ books = [
 
 
 for book in books:
-    book_repository.save(book)
+    books_repository.save(book)
 
 for row in author_repository.select_all():
     print(row.__dict__)
@@ -284,5 +284,5 @@ for row in author_repository.select_all():
 for row in publisher_repository.select_all():
     print(row.__dict__)
 
-for row in book_repository.select_all():
+for row in books_repository.select_all():
     print(row.__dict__)

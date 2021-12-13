@@ -32,8 +32,8 @@
 - [x] Create templates
 
 ####  CONTROLLERS
-- [ ] Create blueprints
-- [ ] Import blueprint and register them in app.py
+- [x] Create blueprints
+- [x] Import blueprint and register them in app.py
 - [ ] Authors controllers
 - [ ] Publishers controllers
 - [ ] Books controllers
@@ -47,6 +47,9 @@
 - ISBN is integer but it needs to also accept leading 0 so figure that out
 - ISBN is a VARCHAR now but will it let it be the id and controllers
 accept it as param for searches????
+- Add models __repr__ and that stuff
+- Add errors and error handling
+- Add comments and docs
 
 #### SQL
 

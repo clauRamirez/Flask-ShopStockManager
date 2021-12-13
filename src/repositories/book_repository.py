@@ -99,6 +99,6 @@ def select_all() -> List[Book]:
             stock=row['stock'],
             id=row['id']
         ) for row in run_sql(
-            sql="SELECT * FROM books;"
+            sql="SELECT * FROM books ORDER BY title;"
         )
     ]

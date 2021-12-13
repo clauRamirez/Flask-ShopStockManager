@@ -70,6 +70,6 @@ def select_all() -> List[Publisher]:
             contact=row['contact'],
             id=row['id']
         ) for row in run_sql(
-            sql="SELECT * FROM publishers;"
+            sql="SELECT * FROM publishers ORDER BY name;"
         )
     ]

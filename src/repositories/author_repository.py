@@ -56,6 +56,6 @@ def select_all() -> List[Author]:
             name=row['name'],
             id=row['id']
         ) for row in run_sql(
-            sql="SELECT * FROM authors;"
+            sql="SELECT * FROM authors ORDER BY name;"
         )
     ]

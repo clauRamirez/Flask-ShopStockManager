@@ -21,7 +21,7 @@
 #### DB AND MODELS
 - [x] Database
 - [x] Models
-- [ ] Authors repository
+- [x] Authors repository
 - [x] Publishers repository
 - [x] Books repository
 - [x] Populate database
@@ -45,6 +45,8 @@
 ### Brainstorming
 
 - ISBN is integer but it needs to also accept leading 0 so figure that out
+- ISBN is a VARCHAR now but will it let it be the id and controllers
+accept it as param for searches????
 
 #### SQL
 

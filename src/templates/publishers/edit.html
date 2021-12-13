@@ -1,23 +1,27 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    
-<h3>Publisher:</h3>
 
-<label for="name">Company:</label>
-<input type="text" name="name" id="name" required autofocus>
+<a href="{{ request.referrer }}">Back</a>
 
-<label for="website">Website:</label>
-<input type="text" name="website" id="website" required>
+<form action="{{ request.referrer }}" method="POST">
+    <h3>Publisher:</h3>
 
-<label for="salesperson">Salesperson:</label>
-<input type="text" name="salesperson" id="salesperson" required>
+    <label for="name">Company:</label>
+    <input type="text" name="name" id="name" value="{{ publisher.name }}" required autofocus>
 
-{% if publisher.contact is not None %}
-<label for="contact">Contact:</label>
-<input type="text" name="contact" id="contact" required>
-{% endif %}
+    <label for="website">Website:</label>
+    <input type="text" name="website" id="website" value="{{ publisher.website }}">
 
-<input type="submit" value="Add">
+    <label for="salesperson">Salesperson:</label>
+    <input type="text" name="salesperson" id="salesperson" 
+    {% if publisher.contact !=None %} value="{{ publisher.salesperson }}" {% endif %}>
 
-{% endblock  %}
+    <label for="contact">Contact:</label>
+    <input type="text" name="contact" id="contact" 
+    {% if publisher.contact !=None %} value="{{ publisher.contact }}" {% endif %}>
+
+    <input type="submit" value="Edit">
+</form>
+
+{% endblock %}

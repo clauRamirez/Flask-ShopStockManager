@@ -24,11 +24,12 @@ def select(id: int) -> Publisher:
         values=[id]
     )
     if results[0] is not None:
+        res = results[0]
         return Publisher(
-            name=results[0]['name'],
-            website=results[0]['website'],
-            salesperson=results[0]['salesperson'],
-            contact=results[0]['contact'],
+            name=res['name'],
+            website=res['website'],
+            salesperson=res['salesperson'],
+            contact=res['contact'],
             id=id
         )
 

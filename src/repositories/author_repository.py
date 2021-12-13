@@ -34,6 +34,8 @@ def delete(id: int) -> None:
 
 def update(author: Author) -> None:
     run_sql(
+        # ROW('value') METHOD IS REQUESTED BY POSTGRESQL IN THIS CASE IN PARTICULAR
+        # REMOVING IT WILL LEAD TO ERRORS WHILE RUNNING THIS FUNCTION
         sql="\
             UPDATE authors SET(name) = ROW(%s) \
             WHERE id = %s;",

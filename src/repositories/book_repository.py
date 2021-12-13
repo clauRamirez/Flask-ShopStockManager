@@ -1,7 +1,5 @@
 from db.run_sql import run_sql
-from models.author import Author
 from models.book import Book
-from models.publisher import Publisher
 from repositories import author_repository, publisher_repository
 from typing import List
 
@@ -24,7 +22,6 @@ def save(book: Book) -> None:
             book.stock
         ]
     )
-    print(results)
     book.id = results[0]['id']
 
 
@@ -34,18 +31,19 @@ def select(id: int) -> Book:
         values=[id]
     )
     if results[0] is not None:
+        res = results[0]
         return Book(
-            isbn=results[0]['isbn'],
-            title=results[0]['title'],
-            genre=results[0]['genre'],
-            author=author_repository.select(results[0]['author_id']),
-            illustrator=author_repository.select(results[0]['illustrator_id']),
-            publisher=publisher_repository.select(results[0]['publisher_id']),
-            edition=results[0]['edition'],
-            cost=results[0]['cost'],
-            price=results[0]['price'],
-            stock=results[0]['stock'],
-            id=results[0]['id']
+            isbn=res['isbn'],
+            title=res['title'],
+            genre=res['genre'],
+            author=author_repository.select(res['author_id']),
+            illustrator=author_repository.select(res['illustrator_id']),
+            publisher=publisher_repository.select(res['publisher_id']),
+            edition=res['edition'],
+            cost=res['cost'],
+            price=res['price'],
+            stock=res['stock'],
+            id=res['id']
         )
 
 

@@ -4,16 +4,16 @@ from models.publisher import Publisher
 class Book:
     def __init__(
         self,
-        isbn,
-        title,
-        genre,
-        author,
-        illustrator,
-        publisher,
-        edition,
-        cost,
-        price,
-        stock,
+        isbn: str,
+        title: str,
+        genre: str,
+        author: Author,
+        illustrator: Author,
+        publisher: Publisher,
+        edition: int,
+        cost: float,
+        price: float,
+        stock: int,
         id = None
     ):
     

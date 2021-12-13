@@ -13,12 +13,14 @@ def publishers_index():
     if request.method == 'GET':
         return render_template(
             "/publishers/index.html",
-            title=_title,
-            publishers=publisher_repository.select_all()
+            publishers=publisher_repository.select_all(),
+            title=_title
         )
-
+        
     if request.method == 'POST':
         # make this block less clunky
+        # change Publisher constructor to salesperson=None, contact=None
+        # make database store just null values, print 'no salesperson etc' in views only
         if request.form['salesperson'] == '':
             publisher_repository.save(
                 Publisher(
@@ -51,7 +53,8 @@ def publishers_id(id):
     if request.method == 'GET':
         return render_template(
             "/publishers/show.html",
-            publisher=publisher_repository.select(id)
+            publisher=publisher_repository.select(id),
+            title=_title
         ) 
     if request.method == 'POST':
         publisher_repository.update(
@@ -73,7 +76,8 @@ def publishers_edit(id):
     return render_template(
         # this needs to change
         "/publishers/edit.html",
-        publisher=publisher_repository.select(id)
+        publisher=publisher_repository.select(id),
+        title=_title
     )
 
 

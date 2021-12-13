@@ -6,15 +6,21 @@ from repositories import book_repository, author_repository, publisher_repositor
 books_blueprint = Blueprint("books", __name__)
 
 # Title is not appearing in subdirectories i.e: /books/new etc
-_title = "Authors"
+_title = "Books"
+
+@books_blueprint.context_processor
+def inject_title():
+    return dict(title=_title)
+
 
 @books_blueprint.route("/books", methods=['GET', 'POST'])
 def books_index():
+    _title = "Home"
     if request.method == 'GET':
         return render_template(
             "/books/index.html",
+            books=book_repository.select_all(),
             title=_title,
-            books=book_repository.select_all()
         )
     if request.method == 'POST':
         rf = request.form
@@ -44,7 +50,8 @@ def books_new():
         "/books/new.html",
         authors=authors,
         illustrators=authors,
-        publishers=publisher_repository.select_all()
+        publishers=publisher_repository.select_all(),
+        title=_title,
     )
 
 
@@ -55,7 +62,8 @@ def books_id(id):
     if request.method == 'GET':
         return render_template(
             "/books/show.html",
-            book=book_repository.select(id)
+            book=book_repository.select(id),
+            title=_title,
         )
     if request.method == 'POST':
         rf = request.form
@@ -88,7 +96,8 @@ def books_edit(id):
         book=book_repository.select(id),
         authors=authors,
         illustrators=authors,
-        publishers=publisher_repository.select_all()
+        publishers=publisher_repository.select_all(),
+        title=_title,
     )
 
 

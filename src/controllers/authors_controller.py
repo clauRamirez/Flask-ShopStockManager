@@ -27,6 +27,7 @@ def authors_index():
 def authors_new():
     return render_template(
         "/authors/new.html",
+        title=_title,
     )
 
 
@@ -37,7 +38,8 @@ def authors_id(id):
     if request.method == 'GET':
         return render_template(
             "/authors/show.html",
-            author=author_repository.select(id)
+            author=author_repository.select(id),
+            title=_title,
         ) 
     if request.method == 'POST':
         author_repository.update(
@@ -55,7 +57,8 @@ def authors_edit(id):
     return render_template(
         # this needs to change
         "/authors/edit.html",
-        author=author_repository.select(id)
+        author=author_repository.select(id),
+        title=_title,
     )
 
 

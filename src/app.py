@@ -8,7 +8,6 @@ load_dotenv()
 app = Flask(__name__)
 app.url_map.strict_slashes = False
 
-# import controllers and blueprints below
 from controllers.authors_controller import authors_blueprint
 from controllers.books_controller import books_blueprint
 from controllers.publishers_controller import publishers_blueprint

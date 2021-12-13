@@ -1,8 +1,7 @@
 from flask import render_template, redirect, request
 from flask import Blueprint
-from repositories import publisher_repository
 from models.publisher import Publisher
-import repositories.publisher_repository as publisher_repository
+from repositories import publisher_repository
 
 publishers_blueprint = Blueprint("publishers", __name__)
 

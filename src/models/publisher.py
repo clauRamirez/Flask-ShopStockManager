@@ -3,7 +3,7 @@ class Publisher:
         self,
         name: str,
         website: str,
-        salesperson: str = 'No salesperson, order via website',
+        salesperson: str = "No salesperson, order via website",
         contact: str = None,
         id: int = None
     ):

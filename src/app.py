@@ -1,5 +1,9 @@
+from dotenv import load_dotenv
+from os import getenv
 from flask import Flask
 from flask import render_template, request, redirect
+
+load_dotenv()
 
 app = Flask(__name__)
 app.url_map.strict_slashes = False
@@ -28,4 +32,4 @@ def not_found(error):
     return render_template('error.html'), 404
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=getenv('DEBUG_MODE'))

@@ -33,21 +33,13 @@ def authors_new():
 @authors_blueprint.route("/authors/<int:id>", methods=['GET', 'POST'])
 def authors_id(id):
     if request.method == 'GET':
-        books_by_author=author_repository.get_books_by_author(author_repository.select(id))
-        books_by_illustrator=author_repository.get_books_by_illustrator(author_repository.select(id)),
-
-        books_by_illustrator_filtered = list(books_by_illustrator[0]).copy()
-        
-        for book in books_by_illustrator[0]:
-            for i in books_by_author:
-                if book.id == i.id:
-                    books_by_illustrator_filtered.pop(books_by_illustrator_filtered.index(book))
+        authors, illustrators = author_repository.filter_authors(id)
 
         return render_template(
             "/authors/show.html",
             author=author_repository.select(id),
-            books_by_author=books_by_author,
-            books_by_illustrator=books_by_illustrator_filtered,
+            books_by_author=authors,
+            books_by_illustrator=illustrators,
             title=_title
         ) 
     if request.method == 'POST':

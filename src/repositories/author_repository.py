@@ -2,7 +2,7 @@ from db.run_sql import run_sql
 from models.author import Author
 from models.book import Book
 from repositories import publisher_repository
-from typing import List
+from typing import List, Tuple
 
 
 def save(author: Author) -> None:
@@ -105,3 +105,28 @@ def get_books_by_illustrator(illustrator: Author) -> List[Author]:
             values=[illustrator.id]
         )
     ]
+    
+    
+def filter_authors(id: int) -> Tuple[Author, Author]:
+        '''Filters between authors that are only authors or writers, 
+        authors that are only illustrators, and those that are both.
+        
+        Returns a tuple consisting on 2 lists:
+        1. A list of books in which the author is either writer/author
+        or both write/author and illustrator
+        2. A list of books in which the author is ONLY the illustrator
+        
+        This way we avoid presenting repeated information
+        '''
+        
+        books_by_author=get_books_by_author(select(id))
+        books_by_illustrator=get_books_by_illustrator(select(id)),
+
+        books_by_illustrator_filtered = list(books_by_illustrator[0]).copy()
+        
+        for book in books_by_illustrator[0]:
+            for i in books_by_author:
+                if book.id == i.id:
+                    books_by_illustrator_filtered.pop(books_by_illustrator_filtered.index(book))
+
+        return books_by_author, books_by_illustrator_filtered

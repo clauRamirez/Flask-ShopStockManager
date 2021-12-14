@@ -2,8 +2,8 @@
 
 {% block content %}
 
+{% include 'components/back_button.html' %}
 <div class="container">
-    {% include 'components/back_button.html' %}
 
     <div class="form-container">
         <form action="/publishers/{{publisher.id}}" method='POST'>

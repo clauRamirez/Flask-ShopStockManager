@@ -3,15 +3,20 @@
 {% block content %}
 
 <div class="container">
-{% include 'components/back_button.html' %}
+    {% include 'components/back_button.html' %}
+    <div class="form-container">
+        <form action="{{ request.referrer | default('/') }}" method='POST'>
+            <h3>Create new author:</h3>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name" required autofocus>
+            </div>
+            <div class="submit-container">
+                <input type="submit" value="Add">
+            </div>
 
-    <form action="/authors" method='POST'>
-        <h3>Author:</h3>
-        <label for="name">Name:</label>
-        <input type="text" name="name" id="name" required autofocus>
-        <input type="submit" value="Add">
-
-    </form>
+        </form>
+    </div>
 </div>
 
 {% endblock %}

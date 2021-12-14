@@ -1,11 +1,26 @@
-form {
+.form-container {
+    /* make some space and flex and all that here */
+    width: 60%;
+    padding: 4vh 3vw;
+    margin: auto;
     border: 1px solid red;
 }
 
-.form-container {
-    /* make some space and flex and all that here */
+form {
+    border: 1px solid red;
+    padding: 4vh 3vw;
 }
 
 .form-group {
-    /* label-> input pairs */
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 3vh 0;
+}
+
+.form-group > input {
+    margin-top: 2vh;
+}
+
+.submit-container {
+    text-align: right;
 }

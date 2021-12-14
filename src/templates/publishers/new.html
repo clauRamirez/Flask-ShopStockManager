@@ -4,24 +4,35 @@
 
 <div class="container">
     {% include 'components/back_button.html' %}
-    
-    <form action="/publishers" method='POST'>
-        <h3>Publisher:</h3>
 
-        <label for="name">Company:</label>
-        <input type="text" name="name" id="name" required autofocus>
+    <div class="form-container">
+        <form action="{{ request.referrer | default('/') }}" method='POST'>
+            <h3>Publisher:</h3>
 
-        <label for="website">Website:</label>
-        <input type="text" name="website" id="website" required>
+            <div class="form-group">
+                <label for="name">Company:</label>
+                <input type="text" name="name" id="name" required autofocus>
+            </div>
 
-        <label for="salesperson">Salesperson:</label>
-        <input type="text" name="salesperson" id="salesperson">
+            <div class="form-group">
+                <label for="website">Website:</label>
+                <input type="text" name="website" id="website" required>
+            </div>
 
-        <label for="contact">Contact:</label>
-        <input type="text" name="contact" id="contact">
+            <div class="form-group">
+                <label for="salesperson">Salesperson:</label>
+                <input type="text" name="salesperson" id="salesperson">
+            </div>
 
-        <input type="submit" value="Add">
+            <div class="form-group">
+                <label for="contact">Contact:</label>
+                <input type="text" name="contact" id="contact">
+            </div>
 
-    </form>
+            <div class="submit-container">
+                <input type="submit" value="Add">
+            </div>
+        </form>
+    </div>
 </div>
 {% endblock %}

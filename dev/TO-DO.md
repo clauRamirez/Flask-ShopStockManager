@@ -42,8 +42,14 @@
 - [ ] Display information properly
 - [ ] Style
 
+#### COMPONENT
+- [ ] new_button
+- [ ] back_button
+
 ### Brainstorming
 
+- Create utility function to see which title_name (maybe other stuff)
+depending on blueprint,
 - Pass title variable into every route
 - Make request.form and other flask variables into shorter versions
 i.e rf for request.form etc if they're repeated through app

@@ -39,12 +39,23 @@
 - [x] Books controllers
 
 #### TEMPLATES
-- [ ] Display information properly
+- [x] Display information properly
 - [ ] Style
+- [ ] Change ALL urls to absolute paths unless properly tested
 
 #### COMPONENT
-- [ ] new_button
-- [ ] back_button
+- [ ] Remove components
+
+#### LAYOUT
+- [ ] /books/index.html
+- [ ] /books/view.html
+- [ ] buttons on top of every view
+
+#### STYLING
+- [ ] Theme.css for colours variables, fonts etc
+- [ ] cards.css for colours of cards depending on 
+- [ ] banner.css for banner that is red or something if low stock
+it will show stock and other info as per wireframe
 
 ### Brainstorming
 

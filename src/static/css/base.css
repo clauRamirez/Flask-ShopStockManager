@@ -10,7 +10,8 @@
 html, body {
     margin: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
+    overflow: hidden;
 }
 
 ul {
@@ -20,6 +21,12 @@ ul {
 
 li {
     list-style: none;
+}
+
+a {
+    text-decoration: none;
+    /* check this */
+    /* color: inherit; */
 }
 
 /* Body layout */
@@ -44,7 +51,6 @@ body > main {
 body > header {
     display: flex;
     flex-direction: column;
-
 }
 
 body > header > header, 
@@ -76,8 +82,7 @@ body > header > footer {
 
 main {
     background-color: var(--bg-colour-blank);
-    padding: 5vh 5vw;
-
+    padding: 2vh 2vw;
 }
 
 main > .content-wrapper {
@@ -85,4 +90,12 @@ main > .content-wrapper {
     width: 100%;
     border: solid 1px red;
     background-color: var(--bg-colour);
+    overflow: auto;
+}
+
+/* Utils */
+
+.container {
+    padding: 2vh 2vw;
+    margin: 0;
 }

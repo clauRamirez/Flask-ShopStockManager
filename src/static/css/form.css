@@ -1,0 +1,11 @@
+form {
+    border: 1px solid red;
+}
+
+.form-container {
+    /* make some space and flex and all that here */
+}
+
+.form-group {
+    /* label-> input pairs */
+}

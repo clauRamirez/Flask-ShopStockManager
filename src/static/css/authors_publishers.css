@@ -1,0 +1,7 @@
+/* AUTHORS AND PUBLISHERS TEMPLATES SHARE CSS */
+
+.author, .publisher {
+    padding: 4vh 8vw;
+    line-height: 150%;
+    font-size: 18px;
+}

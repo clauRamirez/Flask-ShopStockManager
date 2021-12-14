@@ -5,29 +5,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
     <title>{{ title }} - The Underground </title>
 </head>
 
 <body>
-    <head>
-        <h1>The Underground - Inventory Manager</h1>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/authors">Authors</a></li>
-                <li><a href="/books">Books</a></li>
-                <li><a href="/publishers">Publishers</a></li>
-            </ul>
-        </nav>
-    </head>
+    <header>
+        <header>
+            <h1>Inventory Manager</h1>
+        </header>
+
+        <div class="nav-wrapper">
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/authors">Authors</a></li>
+                    <li><a href="/publishers">Publishers</a></li>
+                    <li><a href="/books">Books</a></li>
+                </ul>
+            </nav>
+        </div>
+        <footer>
+            <p>footer here</p>
+        </footer>
+
+    </header>
 
     <main>
-        {% block content %}{% endblock %}
+        <div class="content-wrapper">
+            {% block content %}{% endblock %}
+        </div>
     </main>
 
-    <footer>
-        <p>footer here</p>
-    </footer>
+
 </body>
 
 </html>

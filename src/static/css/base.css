@@ -1,0 +1,88 @@
+/* Variables */
+
+:root {
+    --bg-colour-blank: green;
+    --bg-colour: white;
+}
+
+/* Reset */
+
+html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+/* Body layout */
+
+body {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+body > header {
+    flex-basis: 20%;
+    border: solid 1px red;
+}
+
+body > main {
+    flex-basis: 80%;
+    border: solid 1px red;
+}
+
+/* Header layout */
+
+body > header {
+    display: flex;
+    flex-direction: column;
+
+}
+
+body > header > header, 
+body > header > footer {
+    border: solid 1px red;
+    flex-grow: 1;
+}
+
+.nav-wrapper {
+    padding: 2vh 2vw;
+    border: solid 1px red;
+    background-color: var(--bg-colour-blank);
+    flex-grow: 9;
+}
+
+/* Header navigation layout */
+
+.nav-wrapper > nav {
+    background-color: var(--bg-colour);
+    height: 100%;
+    width: 100%;
+}
+
+.nav-wrapper > nav > ul > li {
+    padding: 2vw;
+}
+
+/* Main layout */
+
+main {
+    background-color: var(--bg-colour-blank);
+    padding: 5vh 5vw;
+
+}
+
+main > .content-wrapper {
+    height: 100%;
+    width: 100%;
+    border: solid 1px red;
+    background-color: var(--bg-colour);
+}

@@ -107,7 +107,7 @@ def get_books_by_illustrator(illustrator: Author) -> List[Author]:
     ]
     
     
-def filter_authors(id: int) -> Tuple[Author, Author]:
+def filter_authors(id: int) -> Tuple[Book, Book]:
         '''Filters between authors that are only authors or writers, 
         authors that are only illustrators, and those that are both.
         
@@ -116,7 +116,7 @@ def filter_authors(id: int) -> Tuple[Author, Author]:
         or both write/author and illustrator
         2. A list of books in which the author is ONLY the illustrator
         
-        This way we avoid presenting repeated information
+        This way we avoid presenting repeated information.
         '''
         
         books_by_author=get_books_by_author(select(id))

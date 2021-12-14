@@ -5,7 +5,7 @@
 <div class="container author">
 {% include 'components/new_button.html' %}
 
-    <h1>List of authors:</h1>
+    <h2>List of authors:</h1>
     <ul>
         {% for author in authors %}
         <li><a href="{{ request.path }}/{{ author.id }}"> {{ author.name }} </a></li>

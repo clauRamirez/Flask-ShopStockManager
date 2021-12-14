@@ -2,25 +2,26 @@
 
 {% block content %}
 
-<a href="/publishers">Back</a>
+<div class="container">
+    {% include 'components/back_button.html' %}
+    
+    <form action="/publishers" method='POST'>
+        <h3>Publisher:</h3>
 
-<form action="/publishers" method='POST'>
-    <h3>Publisher:</h3>
+        <label for="name">Company:</label>
+        <input type="text" name="name" id="name" required autofocus>
 
-    <label for="name">Company:</label>
-    <input type="text" name="name" id="name" required autofocus>
+        <label for="website">Website:</label>
+        <input type="text" name="website" id="website" required>
 
-    <label for="website">Website:</label>
-    <input type="text" name="website" id="website" required>
+        <label for="salesperson">Salesperson:</label>
+        <input type="text" name="salesperson" id="salesperson">
 
-    <label for="salesperson">Salesperson:</label>
-    <input type="text" name="salesperson" id="salesperson">
+        <label for="contact">Contact:</label>
+        <input type="text" name="contact" id="contact">
 
-    <label for="contact">Contact:</label>
-    <input type="text" name="contact" id="contact">
+        <input type="submit" value="Add">
 
-    <input type="submit" value="Add">
-
-</form>
-
-{% endblock  %}
+    </form>
+</div>
+{% endblock %}

@@ -2,17 +2,15 @@
 
 {% block content %}
 
-<nav>
+<div class="container author">
+{% include 'components/new_button.html' %}
+
+    <h1>List of authors:</h1>
     <ul>
-        <li><a href="{{ request.path }}/new">New</a></li>
+        {% for author in authors %}
+        <li><a href="{{ request.path }}/{{ author.id }}"> {{ author.name }} </a></li>
+        {% endfor %}
     </ul>
-</nav>
+</div>
 
-<h1>AUTHORS INDEX</h1>
-<ul>
-{% for author in authors %}
-    <li><a href="{{ request.path }}/{{ author.id }}"> {{ author.name }} </a></li>
-{% endfor %}
-</ul>
-
-{% endblock  %}
+{% endblock %}

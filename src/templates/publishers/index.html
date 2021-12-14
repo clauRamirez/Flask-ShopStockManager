@@ -2,17 +2,15 @@
 
 {% block content %}
 
-<nav>
+<div class="container publisher">
+    
+    {% include 'components/new_button.html' %}
+    <h1>List of publishers:</h1>
     <ul>
-        <li><a href="{{ request.path }}/new">New</a></li>
+        {% for publisher in publishers %}
+        <li><a href="{{ request.path }}/{{ publisher.id }}"> {{ publisher.name }} </a></li>
+        {% endfor %}
     </ul>
-</nav>
+</div>
 
-<h1>PUBLISHERS INDEX</h1>
-<ul>
-{% for publisher in publishers %}
-    <li><a href="{{ request.path }}/{{ publisher.id }}"> {{ publisher.name }} </a></li>
-{% endfor %}
-</ul>
-
-{% endblock  %}
+{% endblock %}

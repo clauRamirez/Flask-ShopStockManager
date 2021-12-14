@@ -1,10 +1,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>BOOKS INDEX</h1>
-    <a href="{{ request.path }}/new">New</a>
-    {% for book in books %}
-    <ul>
+
+{% include 'components/new_button.html' %}
+
+<h1>BOOKS INDEX</h1>
+
+{% for book in books %}
+<ul>
         <li><a href="{{ request.path }}/{{ book.id }}">{{ book.isbn }}</a></li>
         <li>{{ book.title }}</li>
         <li>{{ book.genre }}</li>

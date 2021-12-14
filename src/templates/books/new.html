@@ -2,55 +2,58 @@
 
 {% block content %}
 
-<form action="{{ request.referrer }}" method="POST">
-    <h3>Book:</h3>
-    
-    <label for="isbn">ISBN:</label>
-    <input type="text" name="isbn" id="isbn" required autofocus>
+<div class="container">
+    {% include 'components/back_button.html' %}
 
-    <label for="title">Title:</label>
-    <input type="text" name="title" id="title" required>
+    <form action="{{ request.referrer }}" method="POST">
+        <h3>Book:</h3>
 
-    <label for="genre">Genre:</label>
-    <input type="text" name="genre" id="genre" required>
+        <label for="isbn">ISBN:</label>
+        <input type="text" name="isbn" id="isbn" required autofocus>
 
-    <label for="author_id">Author:</label>
-    <select id="author_id" name="author_id" required>   
-        <option value="blank" disabled selected>Select...</option>
-    {% for author in authors %}
-        <option value="{{ author.id }}">{{ author.name }}</option>
-    {% endfor %} 
-    </select>  
+        <label for="title">Title:</label>
+        <input type="text" name="title" id="title" required>
 
-    <label for="illustrator_id">Illustrator:</label>
-    <select id="illustrator_id" name="illustrator_id" required>
-        <option value="blank" disabled selected>Select...</option>   
-    {% for illustrator in illustrators %}
-        <option value="{{ illustrator.id }}">{{ illustrator.name }}</option>
-    {% endfor %} 
-    </select> 
+        <label for="genre">Genre:</label>
+        <input type="text" name="genre" id="genre" required>
 
-    <label for="publisher_id">Publisher:</label>
-    <select id="publisher_id" name="publisher_id" required>   
-        <option value="blank" disabled selected>Select...</option>
-    {% for publisher in publishers %}
-        <option value="{{ publisher.id }}">{{ publisher.name }}</option>
-    {% endfor %} 
-    </select> 
+        <label for="author_id">Author:</label>
+        <select id="author_id" name="author_id" required>
+            <option value="blank" disabled selected>Select...</option>
+            {% for author in authors %}
+            <option value="{{ author.id }}">{{ author.name }}</option>
+            {% endfor %}
+        </select>
 
-    <label for="edition">Edition:</label>
-    <input type="number" name="edition" id="edition" required>
+        <label for="illustrator_id">Illustrator:</label>
+        <select id="illustrator_id" name="illustrator_id" required>
+            <option value="blank" disabled selected>Select...</option>
+            {% for illustrator in illustrators %}
+            <option value="{{ illustrator.id }}">{{ illustrator.name }}</option>
+            {% endfor %}
+        </select>
 
-    <label for="cost">Cost:</label>
-    <input type="number" step="0.01" name="cost" id="cost" required>
+        <label for="publisher_id">Publisher:</label>
+        <select id="publisher_id" name="publisher_id" required>
+            <option value="blank" disabled selected>Select...</option>
+            {% for publisher in publishers %}
+            <option value="{{ publisher.id }}">{{ publisher.name }}</option>
+            {% endfor %}
+        </select>
 
-    <label for="price">Price:</label>
-    <input type="number" step="0.01" name="price" id="price" required>
+        <label for="edition">Edition:</label>
+        <input type="number" name="edition" id="edition" required>
 
-    <label for="stock">Stock:</label>
-    <input type="number" name="stock" id="stock" required>
+        <label for="cost">Cost:</label>
+        <input type="number" step="0.01" name="cost" id="cost" required>
 
-    <input type="submit" value="Add">
-</form>
+        <label for="price">Price:</label>
+        <input type="number" step="0.01" name="price" id="price" required>
 
-{% endblock  %}
+        <label for="stock">Stock:</label>
+        <input type="number" name="stock" id="stock" required>
+
+        <input type="submit" value="Add">
+    </form>
+</div>
+{% endblock %}

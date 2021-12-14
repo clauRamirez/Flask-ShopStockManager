@@ -1,21 +1,27 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    
-<a href="/publishers">Back</a>
 
-<h2> {{ publisher.name }} </h2>
-<h2> {{ publisher.website }} </h2>
-<h2> {{ publisher.salesperson }} </h2>
-{% if publisher.contact != None %}
-<h2> {{ publisher.contact }} </h2>
-{% endif %}
-<a href="{{ request.path }}/edit">Edit</a>
-<form action=" {{ request.path }}/delete " method='POST' >
-    <input type="submit" value="Delete">
-</form>
+<div class="container">
+    {% include 'components/back_button.html' %}
+    <a href="{{ request.path }}/edit">Edit</a>
+    <form action=" {{ request.path }}/delete " method='POST'>
+        <input type="submit" value="Delete">
+    </form>
 
-<h2>here add list of all books by publisher</h2>
+    <h2> {{ publisher.name }} </h2>
+    <h2> {{ publisher.website }} </h2>
+    <h2> {{ publisher.salesperson }} </h2>
+    {% if publisher.contact != None %}
+    <h2> {{ publisher.contact }} </h2>
+    {% endif %}
 
+    <h3>Works by publisher:</h3>
+    <ul>
+        {% for book in books %}
+        <li><a href="/books/{{ book.id }}">{{ book.title }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
 
-{% endblock  %}
+{% endblock %}

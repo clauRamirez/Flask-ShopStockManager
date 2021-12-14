@@ -1,12 +1,11 @@
 .form-container {
-    /* make some space and flex and all that here */
     width: 60%;
     padding: 4vh 3vw;
     margin: auto;
     border: 1px solid red;
 }
 
-form {
+.form-container > form {
     border: 1px solid red;
     padding: 4vh 3vw;
 }

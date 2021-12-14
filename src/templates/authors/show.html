@@ -2,13 +2,29 @@
 
 {% block content %}
 
-<a href="/authors">Back</a>
+<div class="container">
+    {% include 'components/back_button.html' %}
+    <a href="{{ request.path }}/edit">Edit</a>
+    <form action=" {{ request.path }}/delete " method='POST'>
+        <input type="submit" value="Delete">
+    </form>
 
-<h2> {{ author.name }} </h2>
-<a href="{{ request.path }}/edit">Edit</a>
-<form action=" {{ request.path }}/delete " method='POST' >
-    <input type="submit" value="Delete">
-</form>
-<h2>here add list of all books by author</h2>
+    <h2> {{ author.name }} </h2>
+    <h3>Works by author:</h3>
 
-{% endblock  %}
+
+    <ul>
+        {% for book in books_by_author %}
+            <li><a href="/books/{{ book.id }}"> {{ book.title }} </a></li>
+        {% endfor %}
+    </ul>
+
+    <ul>
+        {% for book in books_by_illustrator %}
+            <li><a href="/books/{{ book.id }}"> {{ book.title }} (illustrator)</a></li>
+        {% endfor %}
+    </ul>
+
+
+</div>
+{% endblock %}

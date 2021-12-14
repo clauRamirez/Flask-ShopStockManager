@@ -52,6 +52,7 @@ def publishers_id(id):
         return render_template(
             "/publishers/show.html",
             publisher=publisher_repository.select(id),
+            books=publisher_repository.get_books_by_publisher(publisher_repository.select(id)),
             title=_title
         ) 
     if request.method == 'POST':

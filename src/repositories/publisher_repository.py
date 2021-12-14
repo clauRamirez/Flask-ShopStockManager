@@ -1,5 +1,7 @@
 from db.run_sql import run_sql
 from models.publisher import Publisher
+from models.book import Book
+from repositories import author_repository
 from typing import List
 
 
@@ -72,5 +74,26 @@ def select_all() -> List[Publisher]:
             id=row['id']
         ) for row in run_sql(
             sql="SELECT * FROM publishers ORDER BY name;"
+        )
+    ]
+
+
+def get_books_by_publisher(publisher: Publisher):
+    return [
+        Book(
+            isbn=row['isbn'],
+            title=row['title'],
+            genre=row['genre'],
+            author=author_repository.select(row['author_id']),
+            illustrator=author_repository.select(row['illustrator_id']),
+            publisher=select(row['publisher_id']),
+            edition=row['edition'],
+            cost=row['cost'],
+            price=row['price'],
+            stock=row['stock'],
+            id=row['id']
+        ) for row in run_sql(
+            sql="SELECT * FROM books WHERE publisher_id=%s ORDER BY title",
+            values=[publisher.id]
         )
     ]

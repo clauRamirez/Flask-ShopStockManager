@@ -1,5 +1,7 @@
 from db.run_sql import run_sql
 from models.author import Author
+from models.book import Book
+from repositories import publisher_repository
 from typing import List
 
 
@@ -59,5 +61,47 @@ def select_all() -> List[Author]:
             id=row['id']
         ) for row in run_sql(
             sql="SELECT * FROM authors ORDER BY name;"
+        )
+    ]
+
+
+def get_books_by_author(author: Author) -> List[Author]:
+    return [
+        Book(
+            isbn=row['isbn'],
+            title=row['title'],
+            genre=row['genre'],
+            author=select(row['author_id']),
+            illustrator=select(row['illustrator_id']),
+            publisher=publisher_repository.select(row['publisher_id']),
+            edition=row['edition'],
+            cost=row['cost'],
+            price=row['price'],
+            stock=row['stock'],
+            id=row['id']
+        ) for row in run_sql(
+            sql="SELECT * FROM books WHERE author_id=%s ORDER BY title",
+            values=[author.id]
+        )
+    ]
+
+
+def get_books_by_illustrator(illustrator: Author) -> List[Author]:
+    return [
+        Book(
+            isbn=row['isbn'],
+            title=row['title'],
+            genre=row['genre'],
+            author=select(row['author_id']),
+            illustrator=select(row['illustrator_id']),
+            publisher=publisher_repository.select(row['publisher_id']),
+            edition=row['edition'],
+            cost=row['cost'],
+            price=row['price'],
+            stock=row['stock'],
+            id=row['id']
+        ) for row in run_sql(
+            sql="SELECT * FROM books WHERE illustrator_id=%s ORDER BY title",
+            values=[illustrator.id]
         )
     ]

@@ -2,13 +2,13 @@
 
 {% block content %}
 
-{% include 'components/back_button.html' %}
 <a href="{{ request.path }}/edit">Edit</a>
 <form action=" {{ request.path }}/delete " method='POST'>
     <input type="submit" value="Delete">
 </form>
+{% include 'components/back_button.html' %}
 
-<div class="container author show_template">
+<div class="container author flex-container">
     <div class="info">
         <h3> {{ author.name }} </h2>
     </div>

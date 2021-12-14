@@ -1,13 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
 {% include 'components/back_button.html' %}
 <a href="{{ request.path }}/edit">Edit</a>
 <form action=" {{ request.path }}/delete " method='POST'>
     <input type="submit" value="Delete">
 </form>
 
-<div class="container publisher show_template">
+<div class="container publisher flex-container">
 
     <div class="info">
         <ul>

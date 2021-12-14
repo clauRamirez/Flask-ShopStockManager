@@ -2,8 +2,9 @@
 
 {% block content %}
 
+{% include 'components/back_button.html' %}
+
 <div class="container">
-    {% include 'components/back_button.html' %}
     <div class="form-container">
         <form action="{{ request.referrer | default('/') }}" method='POST'>
             <h3>Create new author:</h3>

@@ -2,10 +2,6 @@
 
 /* authors and publishers (shared CSS) */
 
-.show_template{
-    display: flex;
-}
-
 .author, .publisher {
     line-height: 150%;
     font-size: 18px;

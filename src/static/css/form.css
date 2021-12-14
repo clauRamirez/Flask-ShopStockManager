@@ -1,10 +1,21 @@
 /* CSS for all forms */
 
 .form-container {
-    width: 60%;
+    width: 80%;
     padding: 4vh 3vw;
     margin: auto;
     border: 1px solid red;
+}
+
+.form-book-container {
+    width: 100%;
+    padding: 4vh 1.5vw;
+}
+
+.form-container_item {
+    /* Class for books template forms (edit and new) */
+    flex-basis: 47%;
+    margin: 0 auto;
 }
 
 .form-container > form {
@@ -18,7 +29,8 @@
     margin: 0 0 3vh 0;
 }
 
-.form-group > input {
+.form-group > input,
+.form-group > select {
     margin-top: 2vh;
 }
 

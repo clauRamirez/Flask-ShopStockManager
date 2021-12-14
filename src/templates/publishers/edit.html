@@ -2,26 +2,40 @@
 
 {% block content %}
 
-<a href="{{ request.referrer }}">Back</a>
+<div class="container">
+    {% include 'components/back_button.html' %}
 
-<form action="{{ request.referrer }}" method="POST">
-    <h3>Publisher:</h3>
+    <div class="form-container">
+        <form action="/publishers/{{publisher.id}}" method='POST'>
+            <h3>Publisher:</h3>
 
-    <label for="name">Company:</label>
-    <input type="text" name="name" id="name" value="{{ publisher.name }}" required autofocus>
+            <div class="form-group">
+                <label for="name">Company:</label>
+                <input type="text" name="name" id="name"  value="{{ publisher.name }}" required autofocus>
+            </div>
 
-    <label for="website">Website:</label>
-    <input type="text" name="website" id="website" value="{{ publisher.website }}">
+            <div class="form-group">
+                <label for="website">Website:</label>
+                <input type="text" name="website" id="website" value="{{ publisher.website }}" required>
+            </div>
 
-    <label for="salesperson">Salesperson:</label>
-    <input type="text" name="salesperson" id="salesperson" 
-    {% if publisher.contact !=None %} value="{{ publisher.salesperson }}" {% endif %}>
+            <div class="form-group">
+                <label for="salesperson">Salesperson:</label>
+                <input type="text" name="salesperson" id="salesperson"
+                {% if publisher.contact !=None %} value="{{ publisher.salesperson }}" {% endif %}>
+            </div>
 
-    <label for="contact">Contact:</label>
-    <input type="text" name="contact" id="contact" 
-    {% if publisher.contact !=None %} value="{{ publisher.contact }}" {% endif %}>
+            <div class="form-group">
+                <label for="contact">Contact:</label>
+                <input type="text" name="contact" id="contact"
+                {% if publisher.contact !=None %} value="{{ publisher.contact }}" {% endif %}>
+            </div>
 
-    <input type="submit" value="Edit">
-</form>
+            <div class="submit-container">
+                <input type="submit" value="Add">
+            </div>
+        </form>
+    </div>
+</div>
 
 {% endblock %}

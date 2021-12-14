@@ -1,0 +1,24 @@
+/* CSS for template related classes */
+
+/* authors and publishers (shared CSS) */
+
+.show_template{
+    display: flex;
+}
+
+.author, .publisher {
+    line-height: 150%;
+    font-size: 18px;
+}
+
+.author > .info,
+.publisher > .info {
+    /* 3% extra to allow for borders */
+    flex-basis: 67%;
+}
+
+.author > .works,
+.publisher > .works {
+    /* 3% extra to allow for borders */
+    flex-basis: 27%;
+}

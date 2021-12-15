@@ -18,3 +18,20 @@
     /* 3% extra to allow for borders */
     flex-basis: 27%;
 }
+
+/* books */
+
+.books-show {
+    width: 60%;
+    margin: auto;
+    padding: 6vh 0;
+    font-size: larger;
+}
+
+.low-stock-font {
+    color: red;
+}
+
+.low-stock-border {
+    border: 1px groove rgba(216, 25, 73, 0.459);
+}

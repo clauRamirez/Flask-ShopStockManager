@@ -15,17 +15,20 @@
     height: 36vh;
 }
 
-
 .card-container > .card {
     display: flex;
     padding: 1vh 1vw;
     height: 90%;
+}
+
+/* Effect in card only in /books */
+.card-container > .card.card-index_template {
     opacity: 0.7;
     transition: ease-in-out;
     transition-duration: 0.15s;
 }
 
-.card:hover {
+.card-container > .card.card-index_template:hover {
     padding: 1.05vh 1.1vw;
     opacity: 1;
 }

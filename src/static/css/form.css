@@ -4,7 +4,6 @@
     width: 80%;
     padding: 4vh 3vw;
     margin: auto;
-    border: 1px solid red;
 }
 
 .form-book-container {
@@ -19,7 +18,6 @@
 }
 
 .form-container > form {
-    border: 1px solid red;
     padding: 4vh 3vw;
 }
 

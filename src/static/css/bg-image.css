@@ -24,6 +24,8 @@ main.bg-img-6{
     background-image: url('../img/comic3.jpg');
 }
 
-main.bg-img {
-    background: inherit right cover repeat;
+.bg-img {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }

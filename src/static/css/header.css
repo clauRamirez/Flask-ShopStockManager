@@ -1,0 +1,72 @@
+/* Header element on side with header, footer and nav */
+
+body > header {
+    /* box-shadow #32 from https://getcssscan.com/css-box-shadow-examples  */
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border-left: 2px solid rgba(111, 124, 134, 0.466);
+    padding: 3vh 1vw;
+    /* background from https://projects.verou.me/css3patterns/#microbial-mat */
+    background:
+    radial-gradient(circle at 0% 50%, rgba(96, 16, 48, 0) 9px, rgba(78, 100, 134, 0.452) 10px, rgba(96, 16, 48, 0) 11px) 0px 10px,
+    radial-gradient(at 100% 100%,      rgba(96, 16, 48, 0) 9px, rgba(62, 84, 104, 0.527) 10px, rgba(96, 16, 48, 0) 11px), rgba(50, 55, 82, 0.39);
+    background-size: 7px 7px;
+    text-align: center;
+}
+
+body > header > nav {
+    padding-top: 3vh;
+}
+
+body > header > nav > ul > li > a{
+    color: var(--bg-colour);
+    text-shadow: 1px 1px 3px black;
+    font-size: 20px;
+    opacity: 0.9;
+    transition: ease-in;
+    transition-duration: 0.20s;
+}
+
+body > header > nav > ul > li > a:hover{
+    color: var(--bg-colour);
+    text-shadow: 1px 2px 3.2px black;
+    font-size: 20.5px;
+    opacity: 1;
+}
+
+body > header > header {
+    background-image: url('../img/2000px-Watchmen-smiley.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    height: 20vh;
+    margin-top: 7vh;
+}
+
+body > header > header > h1 {
+    color: var(--bg-colour);
+    text-shadow: 1px 1px 3px black;
+    margin-top: auto;
+    font-size: 36px;
+    margin-top: -4vh;
+}
+
+body > header > footer {
+    color: var(--bg-colour);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-shadow: none;
+}
+
+.icon-wrapper > a > i {
+    background-color: white;
+    color: black;
+    font-size: 48px;
+    line-height: 60%;
+}
+
+.footer-wrapper {
+    color: black;
+    text-shadow: 3px 1px 3px #ffffff;
+    display: flex;
+}

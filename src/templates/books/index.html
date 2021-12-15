@@ -2,24 +2,39 @@
 
 {% block content %}
 
-{% include 'components/new_button.html' %}
 
-<h1>BOOKS INDEX</h1>
+<div class="container ">
+    {% include 'components/new_button.html' %}
 
-{% for book in books %}
-<ul>
-        <li><a href="{{ request.path }}/{{ book.id }}">{{ book.isbn }}</a></li>
-        <li>{{ book.title }}</li>
-        <li>{{ book.genre }}</li>
-        <li>{{ book.author.name }}</li>
-        <li>{{ book.illustrator.name }} (Illutrator)</li>
-        <li>{{ book.publisher.name }}</li>
-        <li>{{ book.edition }}</li>
-        <li>£{{ book.cost }}</li>
-        <li>£{{ book.price }}</li>
-        <li>{{ book.stock }}</li>
-    </ul>
-    <hr>
-    {% endfor %}
-
-{% endblock  %}
+    <div class="flex-container flex-column">
+        <h2>List of books:</h2>
+        <div class="card-list">
+            {% for book in books %}
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-item card-info">
+                        <a href="{{ request.path }}/{{ book.id }}">
+                            <li>{{ book.isbn }}</li>
+                            <li>{{ book.title }}</li>
+                            <hr>
+                            <li>{{ book.author.name }}</li>
+                            <li>{{ book.illustrator.name }} <i>(Illutrator)</i></li>
+                            <li>{{ book.publisher.name }}</li>
+                            <li>{{ book.genre }}</li>
+                            <li>{{ book.edition }} Ed.</li>
+                    </div>
+                    <div class="card-item card-pricing">
+                        <li class='card-pricing_stock'>{{ book.stock }}</li>
+                        <li>£{{ book.price }}</li>
+                        <li>£{{ book.cost }}</li>
+                        <hr>
+                        <li>£{{ book.get_mark_up() }}</li>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

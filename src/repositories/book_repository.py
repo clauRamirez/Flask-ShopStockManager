@@ -100,3 +100,25 @@ def select_all() -> List[Book]:
             sql="SELECT * FROM books ORDER BY title;"
         )
     ]
+    
+def filter(filter: str, id: int) -> List[Book]:
+        
+    return [
+        Book(
+            isbn=row['isbn'],
+            title=row['title'],
+            genre=row['genre'],
+            author=author_repository.select(row['author_id']),
+            illustrator=author_repository.select(row['illustrator_id']),
+            publisher=publisher_repository.select(row['publisher_id']),
+            edition=row['edition'],
+            cost=row['cost'],
+            price=row['price'],
+            stock=row['stock'],
+            id=row['id']
+        ) for row in run_sql(
+            sql=f"\
+                SELECT * FROM books WHERE {filter}_id=%s ORDER BY title",
+            values=[id]
+        )
+    ]

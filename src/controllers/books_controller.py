@@ -11,10 +11,17 @@ _title = "Books"
 @books_blueprint.route("/books", methods=['GET', 'POST'])
 def books_index():
     _title = "Home"
+    books=book_repository.select_all()
+
     if request.method == 'GET':
+        if request.args:
+            key=list(request.args.keys())[0]
+            value=request.args.get('publisher')
+            books=book_repository.filter(key, value)
         return render_template(
             "/books/index.html",
-            books=book_repository.select_all(),
+            books=books,
+            publishers=publisher_repository.select_all(),
             title=_title,
         )
     if request.method == 'POST':

@@ -15,6 +15,16 @@
 
 <div class="container ">
 
+    <form action="{{ request.path }}" method="GET">
+        <select name="publisher" id="publisher">
+            <option value="blank" selected disabled>Publisher...</option>
+            {% for publisher in publishers %}
+                <option value="{{ publisher.id }}">{{publisher.name}}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Add">
+    </form>
+
     <div class="flex-container flex-column">
         <h2>List of books:</h2>
         <div class="card-list">

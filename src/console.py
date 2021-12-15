@@ -14,7 +14,6 @@ burns = Author(name="Charles Burns")
 clowes = Author(name="Daniel Clowes")
 walden = Author(name="Tillie Walden")
 kabi = Author(name="Nagata Kabi")
-hanselmann = Author(name="Simon Hanselmann")
 moore = Author(name="Alan Moore")
 gibbons = Author(name="Dave Gibbons")
 otomo = Author(name="Katsuhiro Otomo")
@@ -259,18 +258,6 @@ books = [
         cost=4.21,
         price=9.99,
         stock=12
-    ),
-    Book(
-        isbn="1683963091",
-        title="Seeds and Stems",
-        genre="Drama",
-        author=hanselmann,
-        illustrator=hanselmann,
-        publisher=fgraphics,
-        edition=1,
-        cost=12.21,
-        price=19.99,
-        stock=6
     )
 ]
 

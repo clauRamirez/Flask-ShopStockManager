@@ -24,6 +24,26 @@
         </select>
         <input type="submit" value="Add">
     </form>
+    
+    <form action="{{ request.path }}" method="GET">
+        <select name="author" id="author">
+            <option value="blank" selected disabled>Author...</option>
+            {% for author in authors %}
+                <option value="{{ author.id }}">{{author.name}}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Add">
+    </form>
+
+    <form action="{{ request.path }}" method="GET">
+        <select name="genre" id="genre">
+            <option value="blank" selected disabled>Genre...</option>
+            {% for genre in genres %}
+                <option value="{{ genre|lower }}">{{ genre }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Add">
+    </form>
 
     <div class="flex-container flex-column">
         <h2>List of books:</h2>

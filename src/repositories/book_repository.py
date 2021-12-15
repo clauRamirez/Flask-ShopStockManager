@@ -1,7 +1,7 @@
 from db.run_sql import run_sql
 from models.book import Book
 from repositories import author_repository, publisher_repository
-from typing import List
+from typing import List, Any
 
 
 def save(book: Book) -> None:
@@ -100,25 +100,50 @@ def select_all() -> List[Book]:
             sql="SELECT * FROM books ORDER BY title;"
         )
     ]
+
+
+def filter(filter: str, search_param: Any) -> List[Book]:
+    '''@filter: 'author', 'publisher' OR 'genre'
+    @search_param: INT or String if @filter == 'genre'
     
-def filter(filter: str, id: int) -> List[Book]:
-        
-    return [
-        Book(
-            isbn=row['isbn'],
-            title=row['title'],
-            genre=row['genre'],
-            author=author_repository.select(row['author_id']),
-            illustrator=author_repository.select(row['illustrator_id']),
-            publisher=publisher_repository.select(row['publisher_id']),
-            edition=row['edition'],
-            cost=row['cost'],
-            price=row['price'],
-            stock=row['stock'],
-            id=row['id']
-        ) for row in run_sql(
-            sql=f"\
-                SELECT * FROM books WHERE {filter}_id=%s ORDER BY title",
-            values=[id]
-        )
-    ]
+    @return List of Book objects filtered by @filter
+    '''
+    
+    try:
+        if filter == 'genre':
+            sql = f"\
+                SELECT * FROM books WHERE {filter}=%s ORDER BY title"
+            search_param = search_param.capitalize()
+        else:
+            sql = f"\
+                SELECT * FROM books WHERE {filter}_id=%s ORDER BY title"
+    except ValueError('Wrong filter argument') as error:
+        print(error)
+    finally:
+        return [
+            Book(
+                isbn=row['isbn'],
+                title=row['title'],
+                genre=row['genre'],
+                author=author_repository.select(row['author_id']),
+                illustrator=author_repository.select(row['illustrator_id']),
+                publisher=publisher_repository.select(row['publisher_id']),
+                edition=row['edition'],
+                cost=row['cost'],
+                price=row['price'],
+                stock=row['stock'],
+                id=row['id']
+            ) for row in run_sql(
+                sql=sql,
+                values=[search_param]
+            )
+        ]
+
+
+def get_genres() -> List[str]:
+    lst = []
+
+    for row in select_all():
+        lst.append(row.genre)
+
+    return sorted(list(set(lst)))

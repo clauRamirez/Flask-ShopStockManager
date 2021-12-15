@@ -12,16 +12,26 @@ _title = "Books"
 def books_index():
     _title = "Home"
     books=book_repository.select_all()
+    FILTER_FLAG = False
 
     if request.method == 'GET':
         if request.args:
-            key=list(request.args.keys())[0]
-            value=request.args.get('publisher')
-            books=book_repository.filter(key, value)
+            if 'genre' not in request.args.keys():
+                key=list(request.args.keys())[0]
+                value=request.args.get(key)
+                books=book_repository.filter(key, value)
+            else:
+                key=list(request.args.keys())[0]
+                value=request.args.get(key)
+                books=book_repository.filter(key, value)
+            
         return render_template(
             "/books/index.html",
             books=books,
             publishers=publisher_repository.select_all(),
+            authors=author_repository.select_all(),
+            genres=book_repository.get_genres(),
+            filtered=FILTER_FLAG,
             title=_title,
         )
     if request.method == 'POST':

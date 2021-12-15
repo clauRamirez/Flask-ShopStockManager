@@ -13,37 +13,43 @@
     </nav>
 </div>
 
-<div class="container ">
-
-    <form action="{{ request.path }}" method="GET">
-        <select name="publisher" id="publisher">
-            <option value="blank" selected disabled>Publisher...</option>
-            {% for publisher in publishers %}
+<div class="container">
+    <div class="search-container-wrapper">
+        <form class="search-container" action="{{ request.path }}" method="GET">
+            <select class="search-container-item" name="publisher" id="publisher">
+                <option value="blank" selected disabled>Publisher...</option>
+                {% for publisher in publishers %}
                 <option value="{{ publisher.id }}">{{publisher.name}}</option>
-            {% endfor %}
-        </select>
-        <input type="submit" value="Add">
-    </form>
-    
-    <form action="{{ request.path }}" method="GET">
-        <select name="author" id="author">
-            <option value="blank" selected disabled>Author...</option>
-            {% for author in authors %}
-                <option value="{{ author.id }}">{{author.name}}</option>
-            {% endfor %}
-        </select>
-        <input type="submit" value="Add">
-    </form>
+                {% endfor %}
+            </select>
+            <button class="search-btn search-container-item">
+                <input type="submit" value="Go">
+            </button>
+        </form>
 
-    <form action="{{ request.path }}" method="GET">
-        <select name="genre" id="genre">
-            <option value="blank" selected disabled>Genre...</option>
-            {% for genre in genres %}
+        <form class="search-container" action="{{ request.path }}" method="GET">
+            <select class="search-container-item" name="author" id="author">
+                <option value="blank" selected disabled>Author...</option>
+                {% for author in authors %}
+                <option value="{{ author.id }}">{{author.name}}</option>
+                {% endfor %}
+            </select>
+            <button class="search-btn search-container-item">
+                <input type="submit" value="Go">
+            </button>
+        </form>
+        <form class="search-container " action="{{ request.path }}" method="GET">
+            <select class="search-container-item" name="genre" id="genre">
+                <option value="blank" selected disabled>Genre...</option>
+                {% for genre in genres %}
                 <option value="{{ genre|lower }}">{{ genre }}</option>
-            {% endfor %}
-        </select>
-        <input type="submit" value="Add">
-    </form>
+                {% endfor %}
+            </select>
+            <button class="search-btn search-container-item">
+                <input type="submit" value="Go">
+            </button>
+        </form>
+    </div>
 
     <div class="flex-container flex-column">
         <h2>List of books:</h2>
@@ -63,7 +69,8 @@
                             <li></li>
                     </div>
                     <div class="card-item card-pricing">
-                        <li class='card-pricing_stock {% if book.stock < 5 %}low-stock-font{% endif %}'> {{ book.stock }}</li>
+                        <li class='card-pricing_stock {% if book.stock < 5 %}low-stock-font{% endif %}'> {{ book.stock
+                            }}</li>
                         <li>£{{ book.price }}</li>
                         <li>£{{ book.cost }}</li>
                         <hr>

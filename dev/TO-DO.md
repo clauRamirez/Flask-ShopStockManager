@@ -40,20 +40,20 @@
 
 #### TEMPLATES
 - [x] Display information properly
-- [ ] Style
+- [x] Style
 - [ ] Change ALL urls to absolute paths unless properly tested
 
 #### COMPONENT
 - [ ] Remove components
 
 #### LAYOUT
-- [ ] /books/index.html
-- [ ] /books/view.html
+- [x] /books/index.html
+- [x] /books/view.html
 - [ ] buttons on top of every view
 
 #### STYLING
 - [ ] Theme.css for colours variables, fonts etc
-- [ ] cards.css for colours of cards depending on 
+- [x] cards.css for colours of cards depending on 
 - [ ] banner.css for banner that is red or something if low stock
 it will show stock and other info as per wireframe
 
@@ -62,8 +62,6 @@ it will show stock and other info as per wireframe
 - Create utility function to see which title_name (maybe other stuff)
 depending on blueprint,
 - Pass title variable into every route
-- Make request.form and other flask variables into shorter versions
-i.e rf for request.form etc if they're repeated through app
 - Make salesperson to be empty if not needed instead of the "no salesperson
 ordern from website" thing, and make the app render that into browser 
 whenever salesperson == none or something. this will free space from database
@@ -73,9 +71,6 @@ and also we'll be able to change publishers_controller clunky bit
 accept it as param for searches????
 - Add models __repr__ and that stuff
 - Add errors and error handling
-- Add comments and docs
-- Create different jblocks and put in them repetitive stuff like the 
-go back button, form buttons and edit/delete buttons
 - Add custom 404
 
 #### SQL
@@ -85,7 +80,6 @@ go back button, form buttons and edit/delete buttons
 #### CSS
 
 - Make items have a colour depending on genre
-- Make items have a border colour to show low stock
 
 ### PACKAGES
 

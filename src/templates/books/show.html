@@ -1,35 +1,67 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="top-banner-wrapper bg-dark text-shadow">
+    <span class="banner-title">Books inventory</span>
+    <nav class="top-banner">
+        <ul>
+            <li> 
+                <a title="Go to previous page" href="/books">Back</a>
+            </li>
+            <li>
+                <a title="Create new book entry" href="/books/new">New</a>
+            </li>
+            <li>
+                <a title="Edit current entry" href="{{ request.path }}/edit">Edit</a>
+            </li>
+            <li>
+                <form title="Delete current entry" action="{{ request.path }}/delete " method='POST'>
+                    <input class="text-shadow" type="submit" value="Delete">
+                </form>    
+            </li>
+        </ul>
+    </nav>
+</div>
 <div class="container ">
+    <div class="">
+        <div class="books-banner margin-auto bg-dark {% if book.stock < 5 %}low-stock-border{% endif %}">
+            <div class="card-item card-pricing card-show_template">
 
-    <a href="/books">Back</a>
-    {% include 'components/new_button.html' %}
-    <a href="{{ request.path }}/edit">Edit</a>
-    <form action=" {{ request.path }}/delete " method='POST'>
-        <input type="submit" value="Delete">
-    </form>
-    <h2>Book:</h2>
-
-    <div class="flex-container books-show">
-        <div class="card-item card-info card-show_template">
-            <li>ISBN: {{ book.isbn }}</li>
-            <li>Title: {{ book.title }}</li>
-            <li>{{ book.edition }} Ed.</li>
-            <hr>
-            <li>Author: <a href=" /authors/{{ book.author.id }}">{{ book.author.name }}</a></li>
-            <li>Illustrated by: <a href=" /authors/{{ book.author.id }}">{{ book.illustrator.name }} </a></li>
-            <li>Publisher:<a href=" /publishers/{{ book.publisher.id }}">{{ book.publisher.name }}</a></li>
-            <li>Genre: {{ book.genre }}</li>
+                <div class="card-pricing-item_left">
+                    <li>£{{ book.price }}</li>
+                    <li>£{{ book.cost }}</li>
+                    <hr>
+                    <li>£{{ book.get_mark_up() }}</li>
+                </div>
+                <div class="card-pricing-item_right">
+                    <li class='card-pricing_stock-large {% if book.stock < 5 %}low-stock-font{% endif %}'> {{ book.stock
+                        }}
+                    </li>
+                </div>
+            </div>
         </div>
-        <div class="card-item card-pricing card-show_template">
-            <li class='card-pricing_stock {% if book.stock < 5 %}low-stock-font{% endif %}'> {{ book.stock }}</li>
-            <li>£{{ book.price }}</li>
-            <li>£{{ book.cost }}</li>
-            <hr>
-            <li>£{{ book.get_mark_up() }}</li>
+        <div class="books-show">
+            <div class="card-item card-info card-show_template">
+                <li>ISBN: {{ book.isbn }}</li>
+                <li>Title: {{ book.title }} <i>({{ book.edition }} Ed.)</i></li>
+                <hr>
+                <li>Author: <a href=" /authors/{{ book.author.id }}">{{ book.author.name }}</a></li>
+                <li>Illustrated by: <a href=" /authors/{{ book.author.id }}">{{ book.illustrator.name }} </a></li>
+                <li>Publisher:<a href=" /publishers/{{ book.publisher.id }}">{{ book.publisher.name }}</a></li>
+                <li>Genre: {{ book.genre }}</li>
+            </div>
+            <div class="card-item card-show_template">
+                <ul><b>Other works by author:</b></ul>
+                {% for book in author_books %}
+                <li><a href="books/{{ book.id }}">{{ book.title }} <i>({{ book.edition }} Ed.)</i></a></li>
+                {% endfor %}
+                <hr>
+                <ul><b>Other works by publisher:</b></ul>
+                {% for book in publisher_books %}
+                <li><a href="books/{{ book.id }}">{{ book.title }} <i>({{ book.edition }} Ed.)</i></a></li>
+                {% endfor %}
+            </div>
         </div>
     </div>
-
 </div>
 {% endblock %}

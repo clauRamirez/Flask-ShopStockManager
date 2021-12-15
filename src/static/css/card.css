@@ -49,14 +49,19 @@
     text-align: right;
 }
 
+.card-pricing {
+    display: flex;
+    padding: 1vh 4vw;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
 .card-pricing_stock {
     font-size: larger;
     font-weight: bolder;
 }
 
-/* Minor changes to /books/show.html template */
-
-.card-info.card-show_template {
-    flex-basis: 50% !important;
-    margin-right: auto;
+.card-pricing_stock-large {
+    font-size: xx-large !important;
 }

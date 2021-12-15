@@ -27,7 +27,7 @@
         <h4>Works by publisher:</h4>
         <ul>
             {% for book in books %}
-            <li><a href="/books/{{ book.id }}">{{ book.title }}</a></li>
+            <li><a href="/books/{{ book.id }}">{{ book.title }} <i>({{ book.edition }} Ed.)</i></a></li>
             {% endfor %}
         </ul>
     </div>

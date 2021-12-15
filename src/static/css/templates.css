@@ -3,29 +3,34 @@
 /* authors and publishers (shared CSS) */
 
 .author, .publisher {
-    line-height: 150%;
     font-size: 18px;
 }
 
 .author > .info,
 .publisher > .info {
     /* 3% extra to allow for borders */
-    flex-basis: 67%;
+    flex-basis: 57%;
 }
 
 .author > .works,
 .publisher > .works {
     /* 3% extra to allow for borders */
-    flex-basis: 27%;
+    flex-basis: 47%;
 }
 
 /* books */
 
 .books-show {
-    width: 60%;
+    width: 90%;
     margin: auto;
-    padding: 6vh 0;
+    padding: 3vh 0;
     font-size: larger;
+    display: flex;
+    justify-content: space-between;
+}
+
+.books-show > .card-item {
+    flex-basis: 45%;
 }
 
 .low-stock-font {
@@ -33,7 +38,18 @@
 }
 
 .low-stock-border {
-    border: 1px groove rgba(216, 25, 73, 0.459);
+    border: 1px groove rgba(216, 25, 73, 0.459) !important;
+}
+
+.books-banner {
+    text-align: center;
+    border: 1px solid grey;
+    border-radius: 3px;
+    width: 90%;
+    margin: auto;
+    line-height: 100% !important;
+    color: var(--bg-colour);
+    text-shadow: 1px 1px 3px black;
 }
 
 /* /index.html login page */

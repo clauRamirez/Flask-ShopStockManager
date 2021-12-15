@@ -5,11 +5,6 @@ body > header {
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     border-left: 2px solid rgba(111, 124, 134, 0.466);
     padding: 3vh 1vw;
-    /* background from https://projects.verou.me/css3patterns/#microbial-mat */
-    background:
-    radial-gradient(circle at 0% 50%, rgba(96, 16, 48, 0) 9px, rgba(78, 100, 134, 0.452) 10px, rgba(96, 16, 48, 0) 11px) 0px 10px,
-    radial-gradient(at 100% 100%,      rgba(96, 16, 48, 0) 9px, rgba(62, 84, 104, 0.527) 10px, rgba(96, 16, 48, 0) 11px), rgba(50, 55, 82, 0.39);
-    background-size: 7px 7px;
     text-align: center;
 }
 
@@ -62,7 +57,7 @@ body > header > footer {
     background-color: white;
     color: black;
     font-size: 48px;
-    line-height: 60%;
+    line-height: 55%;
 }
 
 .footer-wrapper {

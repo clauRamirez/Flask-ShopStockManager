@@ -1,0 +1,44 @@
+/* CSS for navigation at top (Go back, edit, new...) */
+
+.top-banner-wrapper {
+    padding: 1vh 2vw;
+    font-size: 16px;
+    /* box-shadow #32 from https://getcssscan.com/css-box-shadow-examples  */
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 6px 1px;
+
+}
+
+.top-banner {
+    padding: 1vh 2vw;
+    border-top: 1px solid rgba(60, 64, 67, 0.15);
+}
+
+.top-banner > ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+.top-banner > ul > li > a,
+.top-banner > ul > li > form {
+    color: inherit;
+    opacity: 0.9;
+    transition: ease-in;
+    transition-duration: 0.12s;
+}
+
+.top-banner > ul > li > a:hover,
+.top-banner > ul > li > form:hover {
+    font-size: 16.5px;
+    opacity: 1;
+}
+
+.top-banner > a {
+    color: inherit;
+}
+
+.banner-title {
+    display: block;
+    font-size: 24px;
+    padding: 1vh 2vw;
+    font-style: italic;
+}

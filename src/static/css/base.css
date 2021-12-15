@@ -15,6 +15,18 @@ html, body {
     overflow: hidden;
 }
 
+/* Button styling reset by https://stackoverflow.com/questions/2460100/remove-the-complete-styling-of-an-html-button-submit#45890842 */
+button, 
+input[type="submit"], 
+input[type="reset"] {
+	background: none;
+	color: inherit;
+	border: none;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
 ul {
     margin: 0;
     padding: 0;
@@ -27,6 +39,27 @@ li {
 a {
     text-decoration: none;
 
+}
+
+/* theming */
+
+.bg-dark {
+    /* background from https://projects.verou.me/css3patterns/#microbial-mat */
+    background:
+    radial-gradient(circle at 0% 50%, rgba(96, 16, 48, 0) 9px, rgba(78, 100, 134, 0.452) 10px, rgba(96, 16, 48, 0) 11px) 0px 10px,
+    radial-gradient(at 100% 100%,      rgba(96, 16, 48, 0) 9px, rgba(62, 84, 104, 0.527) 10px, rgba(96, 16, 48, 0) 11px), rgba(50, 55, 82, 0.39);
+    background-size: 7px 7px;
+}
+
+.text-shadow {
+    color: var(--bg-colour);
+    text-shadow: 1px 1px 3px black;
+}
+
+main {
+    font-family: sans-serif;
+    font-size: 14px;
+    line-height: 200%;
 }
 
 /* Body layout */

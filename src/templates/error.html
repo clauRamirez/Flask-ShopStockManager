@@ -1,12 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Error</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/404.css') }}">
+    <title>404 - Inventory Manager</title>
 </head>
+
 <body>
-    <h1>Error test</h1>
+    <div class="container-wrapper">
+        <div class="container-row top">
+            <div class="container">
+                <h1>4</h1>
+                <img class="img-404" src="/static/img/2000px-Watchmen-smiley.png" alt="Smiley face badge">
+                <h1>4</h1>
+            </div>
+        </div>
+        <div class="container-row bottom">
+            <h1>OOPS!</h1>
+            <h2>THE PAGE YOU'RE LOOKING FOR CAN'T BE FOUND!</h2>
+            <button class="home-button">
+                <a class="home-link" href="/">We'll take you home</a>
+            </button>
+        </div>
+    </div>
 </body>
+
 </html>

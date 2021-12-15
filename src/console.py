@@ -20,7 +20,7 @@ otomo = Author(name="Katsuhiro Otomo")
 spiegelman = Author(name="Art Spiegelman")
 satrapi = Author(name="Marjane Satrapi")
 
-authors = [burns, clowes, walden, kabi, hanselmann, moore, gibbons, otomo, spiegelman, satrapi]
+authors = [burns, clowes, walden, kabi, moore, gibbons, otomo, spiegelman, satrapi]
 
 for author in authors:
     author_repository.save(author)

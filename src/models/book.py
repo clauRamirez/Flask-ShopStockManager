@@ -16,7 +16,7 @@ class Book:
         stock: int,
         id = None
     ):
-    
+
         self.isbn = isbn
         self.title = title
         self.genre = genre
@@ -28,7 +28,16 @@ class Book:
         self.price = price
         self.stock = stock
         self.id = id
-        
+    
+    def __repr__(self) -> str:
+        return f"Book: {{ \
+            id: {self.id}, isbn: {self.isbn}, title: {self.title}, genre: {self.genre}, \
+            author: {self.author}, illustrator: {self.illustrator}, publisher: {self.publisher}, \
+            edition: {self.edition}, cost: {self.cost}, price: {self.price}, stock: {self.stock} }}"
+            
+    def __str__(self) -> str:
+        return self.__repr__
+    
     def get_mark_up(self) -> float:
         return round(self.price - self.cost, 2)
     

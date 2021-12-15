@@ -8,14 +8,16 @@
     <nav class="top-banner">
         <ul>
             <li>
-                <a title="Create new entry" href="/publishers/new">New</a>
+                <button class="border-btn">
+                    <a title="Create new entry" href="/publishers/new">New</a>
+                </button>
             </li>
         </ul>
     </nav>
 </div>
 
 <div class="container publisher">
-        <h2>List of publishers:</h2>
+    <h2>List of publishers:</h2>
     <ul>
         {% for publisher in publishers %}
         <li><a href="{{ request.path }}/{{ publisher.id }}"> {{ publisher.name }} </a></li>

@@ -6,21 +6,27 @@
     <span class="banner-title">Authors</span>
     <nav class="top-banner">
         <ul>
-            <li> 
-                <a title="Go to previous page" href="/authors">
-                    <i class="fa fa-hand-o-left"></i>
-                </a>
+            <li>
+                <button class="border-btn">
+                    <a title="Go to previous page" href="/authors">
+                        <i class="fa fa-hand-o-left"></i>
+                    </a>
+                </button>
             </li>
             <li>
-                <a title="Create new entry" href="/authors/new">New</a>
+                <button class="border-btn">
+                    <a title="Create new entry" href="/authors/new">New</a>
+                </button>
             </li>
             <li>
+                <button class="border-btn">
                 <a title="Edit current entry" href="{{ request.path }}/edit">Edit</a>
+                </button>
             </li>
             <li>
                 <form class="delete-btn" title="Delete current entry" action="{{ request.path }}/delete" method='POST'>
                     <input class="text-shadow" type="submit" value="Delete">
-                </form>    
+                </form>
             </li>
         </ul>
     </nav>

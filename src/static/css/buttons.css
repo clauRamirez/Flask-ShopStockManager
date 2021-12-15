@@ -2,6 +2,18 @@
 
 /* Delete button */
 
+.border-btn {
+    background-color: rgba(47, 55, 66, 0.342);
+    border-radius: 3px;
+    border: 2px solid rgba(204, 214, 228, 0.479);
+    text-align: center;
+    width: 6vw;
+    padding: 0.5vh 1vw;
+    /* box-shadow #32 from https://getcssscan.com/css-box-shadow-examples  */
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+
+}
+
 .delete-btn {
     background-color: lightcoral;
     border-radius: 3px;
@@ -31,6 +43,7 @@
     margin: 0 0.5vw;
 }
 
+.border-btn > a,
 .search-btn > a {
     color: inherit;
 }

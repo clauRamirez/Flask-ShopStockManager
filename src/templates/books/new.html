@@ -6,10 +6,12 @@
     <span class="banner-title">Books inventory</span>
     <nav class="top-banner">
         <ul>
-            <li> 
-                <a title="Go to previous page" href="/books">
-                    <i class="fa fa-hand-o-left"></i>
-                </a>
+            <li>
+                <button class="border-btn">
+                    <a title="Go to previous page" href="/books">
+                        <i class="fa fa-hand-o-left"></i>
+                    </a>
+                </button>
             </li>
         </ul>
     </nav>
@@ -18,8 +20,7 @@
 <div class="container">
 
     <div class="form-book-container form-container">
-        <form action="{{ request.referrer | default('/') }}" method="POST"
-            class="flex-container flex-column">
+        <form action="{{ request.referrer | default('/') }}" method="POST" class="flex-container flex-column">
             <h3>Create new book:</h3>
             <div class="flex-container">
                 <div class="form-container_item">

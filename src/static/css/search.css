@@ -1,9 +1,10 @@
 /* CSS for filter search forms in /books/ */
 
 .search-container-wrapper {
-    margin: 2vh 1vw;
+    padding: 2vh 1vw;
     display: flex;
     justify-content: space-evenly;
+    background-color: var(--bg-colour);
 }
 
 .search-container {

@@ -5,21 +5,27 @@
     <span class="banner-title">Books inventory</span>
     <nav class="top-banner">
         <ul>
-            <li> 
-                <a title="Go to previous page" href="/books">
-                    <i class="fa fa-hand-o-left"></i>
-                </a>
+            <li>
+                <button class="border-btn">
+                    <a title="Go to previous page" href="/books">
+                        <i class="fa fa-hand-o-left"></i>
+                    </a>
+                </button>
             </li>
             <li>
-                <a title="Create new entry" href="/books/new">New</a>
+                <button class="border-btn">
+                    <a title="Create new entry" href="/books/new">New</a>
+                </button>
             </li>
             <li>
-                <a title="Edit current entry" href="{{ request.path }}/edit">Edit</a>
+                <button class="border-btn">
+                    <a title="Edit current entry" href="{{ request.path }}/edit">Edit</a>
+                </button>
             </li>
             <li>
                 <form class="delete-btn" title="Delete current entry" action="{{ request.path }}/delete" method='POST'>
                     <input class="text-shadow" type="submit" value="Delete">
-                </form>    
+                </form>
             </li>
         </ul>
     </nav>
@@ -53,12 +59,12 @@
                 <li>Genre: {{ book.genre }}</li>
             </div>
             <div class="card-item card-show_template">
-                <ul><b>Other works by author:</b></ul>
+                <ul><b>Works by author:</b></ul>
                 {% for book in author_books %}
                 <li><a href="/books/{{ book.id }}">{{ book.title }} <i>({{ book.edition }} Ed.)</i></a></li>
                 {% endfor %}
                 <hr>
-                <ul><b>Other works by publisher:</b></ul>
+                <ul><b>Works by publisher:</b></ul>
                 {% for book in publisher_books %}
                 <li><a href="/books/{{ book.id }}">{{ book.title }} <i>({{ book.edition }} Ed.)</i></a></li>
                 {% endfor %}

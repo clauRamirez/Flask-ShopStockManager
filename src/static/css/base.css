@@ -44,11 +44,7 @@ a {
 /* theming */
 
 .bg-dark {
-    /* background from https://projects.verou.me/css3patterns/#microbial-mat */
-    background:
-    radial-gradient(circle at 0% 50%, rgba(96, 16, 48, 0) 9px, rgba(78, 100, 134, 0.452) 10px, rgba(96, 16, 48, 0) 11px) 0px 10px,
-    radial-gradient(at 100% 100%,      rgba(96, 16, 48, 0) 9px, rgba(62, 84, 104, 0.527) 10px, rgba(96, 16, 48, 0) 11px), rgba(50, 55, 82, 0.39);
-    background-size: 7px 7px;
+    background-color: rgba(50, 55, 82, 0.39);
 }
 
 .text-shadow {
@@ -105,7 +101,7 @@ body > header > nav > ul > li {
 /* Main layout */
 
 main {
-    padding: 1.5vh 2vw;
+    /* padding: 1.5vh 2vw; */
 }
 
 main > .content-wrapper {
@@ -114,15 +110,18 @@ main > .content-wrapper {
     border-radius: 3px;
     height: 100%;
     width: 100%;
-    background-color: var(--bg-colour);
     overflow: auto;
 }
 
 /* Utils */
 
 .container {
-    padding: 2vh 5vw;
-    margin: 0;
+    background-color: var(--bg-colour);
+    margin: 2vh 2vw;
+    padding: 1vh 1vw;
+    border-radius: 3px;
+    min-height: 80%;
+    min-width: 80%;
 }
 
 .flex-container {

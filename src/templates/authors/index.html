@@ -8,7 +8,9 @@
     <nav class="top-banner">
         <ul>
             <li>
-                <a title="Create new entry" href="/authors/new">New</a>
+                <button class="border-btn">
+                    <a title="Create new entry" href="/authors/new">New</a>
+                </button>
             </li>
         </ul>
     </nav>
@@ -17,11 +19,11 @@
 <div class="container author">
 
     <h2>List of authors:</h1>
-    <ul>
-        {% for author in authors %}
-        <li><a href="{{ request.path }}/{{ author.id }}"> {{ author.name }} </a></li>
-        {% endfor %}
-    </ul>
+        <ul>
+            {% for author in authors %}
+            <li><a href="{{ request.path }}/{{ author.id }}"> {{ author.name }} </a></li>
+            {% endfor %}
+        </ul>
 </div>
 
 {% endblock %}

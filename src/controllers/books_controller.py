@@ -53,9 +53,13 @@ def books_new():
 @books_blueprint.route("/books/<int:id>", methods=['GET', 'POST'])
 def books_id(id):
     if request.method == 'GET':
+        book=book_repository.select(id)
+        
         return render_template(
             "/books/show.html",
-            book=book_repository.select(id),
+            book=book,
+            author_books=author_repository.get_books_by_author(book.author),
+            publisher_books=publisher_repository.get_books_by_publisher(book.publisher),
             title=_title,
         )
     if request.method == 'POST':

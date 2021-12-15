@@ -100,9 +100,6 @@ body > header > nav > ul > li {
 
 /* Main layout */
 
-main {
-    /* padding: 1.5vh 2vw; */
-}
 
 main > .content-wrapper {
     /* box-shadow #32 from https://getcssscan.com/css-box-shadow-examples  */

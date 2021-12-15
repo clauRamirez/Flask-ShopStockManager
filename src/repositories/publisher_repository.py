@@ -78,7 +78,7 @@ def select_all() -> List[Publisher]:
     ]
 
 
-def get_books_by_publisher(publisher: Publisher):
+def get_books_by_publisher(publisher: Publisher) -> List[Book]:
     return [
         Book(
             isbn=row['isbn'],

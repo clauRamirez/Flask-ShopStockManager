@@ -65,7 +65,7 @@ def select_all() -> List[Author]:
     ]
 
 
-def get_books_by_author(author: Author) -> List[Author]:
+def get_books_by_author(author: Author) -> List[Book]:
     return [
         Book(
             isbn=row['isbn'],
@@ -86,7 +86,7 @@ def get_books_by_author(author: Author) -> List[Author]:
     ]
 
 
-def get_books_by_illustrator(illustrator: Author) -> List[Author]:
+def get_books_by_illustrator(illustrator: Author) -> List[Book]:
     return [
         Book(
             isbn=row['isbn'],

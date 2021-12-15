@@ -23,7 +23,7 @@ body > header > nav > ul > li > a{
     font-size: 20px;
     opacity: 0.9;
     transition: ease-in;
-    transition-duration: 0.20s;
+    transition-duration: 0.12s;
 }
 
 body > header > nav > ul > li > a:hover{

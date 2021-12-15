@@ -35,3 +35,12 @@
 .low-stock-border {
     border: 1px groove rgba(216, 25, 73, 0.459);
 }
+
+/* /index.html login page */
+
+.splash-screen {
+    padding-top: 20vh;
+    margin: auto;
+    width: 40%;
+    text-align: center;
+}

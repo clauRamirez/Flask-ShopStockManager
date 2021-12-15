@@ -13,44 +13,47 @@
     </nav>
 </div>
 
+<div class="search-container-wrapper">
+    <form class="search-container" action="{{ request.path }}" method="GET">
+        <select class="search-container-item" name="publisher" id="publisher">
+            <option value="blank" selected disabled>Publisher...</option>
+            {% for publisher in publishers %}
+            <option value="{{ publisher.id }}">{{publisher.name}}</option>
+            {% endfor %}
+        </select>
+        <button class="search-btn search-container-item">
+            <input type="submit" value="Go">
+        </button>
+    </form>
+
+    <form class="search-container" action="{{ request.path }}" method="GET">
+        <select class="search-container-item" name="author" id="author">
+            <option value="blank" selected disabled>Author...</option>
+            {% for author in authors %}
+            <option value="{{ author.id }}">{{author.name}}</option>
+            {% endfor %}
+        </select>
+        <button class="search-btn search-container-item">
+            <input type="submit" value="Go">
+        </button>
+    </form>
+    <form class="search-container " action="{{ request.path }}" method="GET">
+        <select class="search-container-item" name="genre" id="genre">
+            <option value="blank" selected disabled>Genre...</option>
+            {% for genre in genres %}
+            <option value="{{ genre|lower }}">{{ genre }}</option>
+            {% endfor %}
+        </select>
+        <button class="search-btn search-container-item">
+            <input type="submit" value="Go">
+        </button>
+    </form>
+    <button class="search-btn">
+        <a href="/books">Show all</a>
+    </button>
+</div>
+
 <div class="container">
-    <div class="search-container-wrapper">
-        <form class="search-container" action="{{ request.path }}" method="GET">
-            <select class="search-container-item" name="publisher" id="publisher">
-                <option value="blank" selected disabled>Publisher...</option>
-                {% for publisher in publishers %}
-                <option value="{{ publisher.id }}">{{publisher.name}}</option>
-                {% endfor %}
-            </select>
-            <button class="search-btn search-container-item">
-                <input type="submit" value="Go">
-            </button>
-        </form>
-
-        <form class="search-container" action="{{ request.path }}" method="GET">
-            <select class="search-container-item" name="author" id="author">
-                <option value="blank" selected disabled>Author...</option>
-                {% for author in authors %}
-                <option value="{{ author.id }}">{{author.name}}</option>
-                {% endfor %}
-            </select>
-            <button class="search-btn search-container-item">
-                <input type="submit" value="Go">
-            </button>
-        </form>
-        <form class="search-container " action="{{ request.path }}" method="GET">
-            <select class="search-container-item" name="genre" id="genre">
-                <option value="blank" selected disabled>Genre...</option>
-                {% for genre in genres %}
-                <option value="{{ genre|lower }}">{{ genre }}</option>
-                {% endfor %}
-            </select>
-            <button class="search-btn search-container-item">
-                <input type="submit" value="Go">
-            </button>
-        </form>
-    </div>
-
     <div class="flex-container flex-column">
         <h2>List of books:</h2>
         <div class="card-list">

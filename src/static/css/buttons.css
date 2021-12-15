@@ -28,4 +28,9 @@
     width: max-content;
     font-size: 14px;
     height: 30px;
+    margin: 0 0.5vw;
+}
+
+.search-btn > a {
+    color: inherit;
 }

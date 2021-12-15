@@ -1,0 +1,58 @@
+/* CSS for card components used in /books */
+
+.card-list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+.card-container {
+    border-radius: 7px;
+    /* box-shadow #32 from https://getcssscan.com/css-box-shadow-examples  */
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;    padding: 1vh 1vw;
+    flex-basis: 40%;
+    margin: 2vh 0.5vw;
+    height: 36vh;
+}
+
+
+.card-container > .card {
+    display: flex;
+    padding: 1vh 1vw;
+    height: 90%;
+    opacity: 0.7;
+    transition: ease-in-out;
+    transition-duration: 0.15s;
+}
+
+.card:hover {
+    padding: 1.2vh 1.4vw;
+    opacity: 1;
+}
+
+.card > .card-item {
+    padding: 1vh 1vw;
+    height: 90%;
+}
+
+.card > .card-item.card-info {
+    flex-basis: 78%;
+    font-size:large;
+}
+
+.card > .card-item.card-pricing {
+    flex-basis: 22%;
+    text-align: right;
+}
+
+.card-pricing_stock {
+    font-size: larger;
+    font-weight: bolder;
+}
+
+/* Minor changes to /books/show.html template */
+
+.card-info.card-show_template {
+    flex-basis: 50% !important;
+    margin-right: auto;
+}

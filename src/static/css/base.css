@@ -106,6 +106,6 @@ main > .content-wrapper {
     display: flex;
 }
 
-.flex-row {
+.flex-column {
     flex-direction: column;
 }

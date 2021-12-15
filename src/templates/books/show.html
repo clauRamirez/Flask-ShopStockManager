@@ -9,30 +9,27 @@
     <form action=" {{ request.path }}/delete " method='POST'>
         <input type="submit" value="Delete">
     </form>
+    <h2>Book:</h2>
 
-    <div class="flex-container flex-column">
-        <h2>Book:</h2>
-        <div class="card-container">
-            <div class="card">
-                <div class="card-item card-info card-show_template">
-                        <li>{{ book.isbn }}</li>
-                        <li>{{ book.title }}</li>
-                        <hr>
-                        <li><a href=" /authors/{{ book.author.id }}">{{ book.author.name }}</a></li>
-                        <li><a href=" /authors/{{ book.author.id }}">{{ book.illustrator.name }} <i>(Illutrator)</i></a></li>
-                        <li><a href=" /publishers/{{ book.publisher.id }}">{{ book.publisher.name }}</a></li>
-                        <li>{{ book.genre }}</li>
-                        <li>{{ book.edition }} Ed.</li>
-                </div>
-                <div class="card-item card-pricing card-show_template">
-                    <li class='card-pricing_stock'>{{ book.stock }}</li>
-                    <li>£{{ book.price }}</li>
-                    <li>£{{ book.cost }}</li>
-                    <hr>
-                    <li>£{{ book.get_mark_up() }}</li>
-                </div>
-            </div>
+    <div class="flex-container books-show">
+        <div class="card-item card-info card-show_template">
+            <li>ISBN: {{ book.isbn }}</li>
+            <li>Title: {{ book.title }}</li>
+            <li>{{ book.edition }} Ed.</li>
+            <hr>
+            <li>Author: <a href=" /authors/{{ book.author.id }}">{{ book.author.name }}</a></li>
+            <li>Illustrated by: <a href=" /authors/{{ book.author.id }}">{{ book.illustrator.name }} </a></li>
+            <li>Publisher:<a href=" /publishers/{{ book.publisher.id }}">{{ book.publisher.name }}</a></li>
+            <li>Genre: {{ book.genre }}</li>
+        </div>
+        <div class="card-item card-pricing card-show_template">
+            <li class='card-pricing_stock {% if book.stock < 5 %}low-stock-font{% endif %}'> {{ book.stock }}</li>
+            <li>£{{ book.price }}</li>
+            <li>£{{ book.cost }}</li>
+            <hr>
+            <li>£{{ book.get_mark_up() }}</li>
         </div>
     </div>
+
 </div>
 {% endblock %}

@@ -10,8 +10,8 @@
         <h2>List of books:</h2>
         <div class="card-list">
             {% for book in books %}
-            <div class="card-container">
-                <div class="card">
+            <div class="card-container {% if book.stock < 5 %}low-stock-border{% endif %}">
+                <div class="card card-index_template">
                     <div class="card-item card-info">
                         <a href="{{ request.path }}/{{ book.id }}">
                             <li>{{ book.isbn }}</li>
@@ -24,7 +24,7 @@
                             <li>{{ book.edition }} Ed.</li>
                     </div>
                     <div class="card-item card-pricing">
-                        <li class='card-pricing_stock'>{{ book.stock }}</li>
+                        <li class='card-pricing_stock {% if book.stock < 5 %}low-stock-font{% endif %}'> {{ book.stock }}</li>
                         <li>£{{ book.price }}</li>
                         <li>£{{ book.cost }}</li>
                         <hr>

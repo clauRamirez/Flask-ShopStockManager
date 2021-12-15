@@ -2,9 +2,18 @@
 
 {% block content %}
 
+<div class="top-banner-wrapper bg-dark text-shadow">
+    <span class="banner-title">Books inventory</span>
+    <nav class="top-banner">
+        <ul>
+            <li>
+                <a title="Create new entry" href="/books/new">New</a>
+            </li>
+        </ul>
+    </nav>
+</div>
 
 <div class="container ">
-    {% include 'components/new_button.html' %}
 
     <div class="flex-container flex-column">
         <h2>List of books:</h2>
@@ -15,13 +24,13 @@
                     <div class="card-item card-info">
                         <a href="{{ request.path }}/{{ book.id }}">
                             <li>{{ book.isbn }}</li>
-                            <li>{{ book.title }}</li>
+                            <li>{{ book.title }} <i>({{ book.edition }} Ed.)</i> </li>
                             <hr>
                             <li>{{ book.author.name }}</li>
                             <li>{{ book.illustrator.name }} <i>(Illutrator)</i></li>
                             <li>{{ book.publisher.name }}</li>
                             <li>{{ book.genre }}</li>
-                            <li>{{ book.edition }} Ed.</li>
+                            <li></li>
                     </div>
                     <div class="card-item card-pricing">
                         <li class='card-pricing_stock {% if book.stock < 5 %}low-stock-font{% endif %}'> {{ book.stock }}</li>

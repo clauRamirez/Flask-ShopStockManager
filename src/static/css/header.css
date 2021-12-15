@@ -42,7 +42,8 @@ body > header > header > h1 {
     text-shadow: 1px 1px 3px black;
     margin-top: auto;
     font-size: 36px;
-    margin-top: -4vh;
+    margin-top: -3vh;
+    margin-right: 2vw;
 }
 
 body > header > footer {
@@ -56,8 +57,8 @@ body > header > footer {
 .icon-wrapper > a > i {
     background-color: white;
     color: black;
-    font-size: 48px;
-    line-height: 55%;
+    font-size: 52px;
+    line-height: 60%;
 }
 
 .footer-wrapper {

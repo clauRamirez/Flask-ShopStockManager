@@ -2,8 +2,19 @@
 
 {% block content %}
 
+
+<div class="top-banner-wrapper bg-dark text-shadow">
+    <span class="banner-title">Authors</span>
+    <nav class="top-banner">
+        <ul>
+            <li>
+                <a title="Create new entry" href="/authors/new">New</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
 <div class="container author">
-{% include 'components/new_button.html' %}
 
     <h2>List of authors:</h1>
     <ul>

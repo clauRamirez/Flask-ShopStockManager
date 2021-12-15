@@ -2,7 +2,18 @@
 
 {% block content %}
 
-{% include 'components/back_button.html' %}
+<div class="top-banner-wrapper bg-dark text-shadow">
+    <span class="banner-title">Authors</span>
+    <nav class="top-banner">
+        <ul>
+            <li> 
+                <a title="Go to previous page" href="/authors">
+                    <i class="fa fa-hand-o-left"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
 
 <div class="container">
     <div class="form-container">
@@ -12,7 +23,7 @@
                 <label for="name">Name:</label>
                 <input type="text" name="name" id="name" required autofocus>
             </div>
-            <div class="submit-container">
+            <div class="submit-container add-btn">
                 <input type="submit" value="Add">
             </div>
 

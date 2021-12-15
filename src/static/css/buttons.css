@@ -1,0 +1,22 @@
+/* CSS for all buttons */
+
+/* Delete button */
+
+.delete-btn {
+    background-color: lightcoral;
+    border-radius: 3px;
+    border: 1px solid red;
+    text-align: center;
+    padding: 0.5vh 1vw;
+}
+
+.add-btn {
+    background-color: rgba(138, 196, 208, 0.555);
+    border-radius: 3px;
+    border: 1px solid rgb(40, 82, 122);
+    text-align: center;
+    padding: 0.5vh 1vw;
+    width: max-content;
+    margin-left: auto;
+    font-size: 16px;
+}

@@ -2,11 +2,29 @@
 
 {% block content %}
 
-{% include 'components/back_button.html' %}
-<a href="{{ request.path }}/edit">Edit</a>
-<form action=" {{ request.path }}/delete " method='POST'>
-    <input type="submit" value="Delete">
-</form>
+<div class="top-banner-wrapper bg-dark text-shadow">
+    <span class="banner-title">Publishers</span>
+    <nav class="top-banner">
+        <ul>
+            <li> 
+                <a title="Go to previous page" href="/publishers">
+                    <i class="fa fa-hand-o-left"></i>
+                </a>
+            </li>
+            <li>
+                <a title="Create new entry" href="/publishers/new">New</a>
+            </li>
+            <li>
+                <a title="Edit current entry" href="{{ request.path }}/edit">Edit</a>
+            </li>
+            <li>
+                <form class="delete-btn" title="Delete current entry" action="{{ request.path }}/delete" method='POST'>
+                    <input class="text-shadow" type="submit" value="Delete">
+                </form>    
+            </li>
+        </ul>
+    </nav>
+</div>
 
 <div class="container publisher flex-container">
 

@@ -1,9 +1,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    
+
+<div class="top-banner-wrapper bg-dark text-shadow">
+    <span class="banner-title">Authors</span>
+    <nav class="top-banner">
+        <ul>
+            <li> 
+                <a title="Go to previous page" href="{{ request.referrer }}">
+                    <i class="fa fa-hand-o-left"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+
 <div class="container">
-    {% include 'components/back_button.html' %}
     <div class="form-container">
         <form action="/authors/{{ author.id }}" method='POST'>
             <h3>Create new author:</h3>
@@ -11,8 +24,8 @@
                 <label for="name">Name:</label>
                 <input type="text" name="name" id="name" value="{{ author.name }}" required autofocus>
             </div>
-            <div class="submit-container">
-                <input type="submit" value="Add">
+            <div class="submit-container add-btn">
+                <input type="submit" value="Update">
             </div>
 
         </form>

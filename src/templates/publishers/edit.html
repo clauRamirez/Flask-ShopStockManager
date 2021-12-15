@@ -2,7 +2,18 @@
 
 {% block content %}
 
-{% include 'components/back_button.html' %}
+<div class="top-banner-wrapper bg-dark text-shadow">
+    <span class="banner-title">Publishers</span>
+    <nav class="top-banner">
+        <ul>
+            <li> 
+                <a title="Go to previous page" href="{{ request.referrer }}">
+                    <i class="fa fa-hand-o-left"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
 
 <div class="container">
 
@@ -32,8 +43,8 @@
                 {% if publisher.contact !=None %} value="{{ publisher.contact }}" {% endif %}>
             </div>
 
-            <div class="submit-container">
-                <input type="submit" value="Add">
+            <div class="submit-container add-btn">
+                <input type="submit" value="Update">
             </div>
         </form>
     </div>

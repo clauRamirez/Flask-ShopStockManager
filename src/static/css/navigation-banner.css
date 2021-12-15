@@ -16,6 +16,7 @@
 .top-banner > ul {
     display: flex;
     justify-content: space-around;
+    align-items: center;
 }
 
 .top-banner > ul > li > a,

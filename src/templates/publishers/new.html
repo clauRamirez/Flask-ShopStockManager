@@ -2,12 +2,24 @@
 
 {% block content %}
 
-{% include 'components/back_button.html' %}
+<div class="top-banner-wrapper bg-dark text-shadow">
+    <span class="banner-title">Publishers</span>
+    <nav class="top-banner">
+        <ul>
+            <li> 
+                <a title="Go to previous page" href="/publishers">
+                    <i class="fa fa-hand-o-left"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
 <div class="container">
 
     <div class="form-container">
         <form action="{{ request.referrer | default('/') }}" method='POST'>
-            <h3>Publisher:</h3>
+            <h3>Create new publisher:</h3>
 
             <div class="form-group">
                 <label for="name">Company:</label>
@@ -29,7 +41,7 @@
                 <input type="text" name="contact" id="contact">
             </div>
 
-            <div class="submit-container">
+            <div class="submit-container add-btn">
                 <input type="submit" value="Add">
             </div>
         </form>

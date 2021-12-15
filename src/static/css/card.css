@@ -13,13 +13,13 @@
     padding: 1vh 1vw;
     flex-basis: 40%;
     margin: 2vh 0.5vw;
-    height: 36vh;
+    height: 40vh;
 }
 
 .card-container > .card {
     display: flex;
     padding: 1vh 1vw;
-    height: 90%;
+    align-items: baseline;
 }
 
 /* Effect in card only in /books */

@@ -1,9 +1,0 @@
-<!-- Component for button that goes back -->
-
-{% if request.referrer == None %}
-    {% set path = '/' %}
-{% else %}
-    {% set path = request.referrer %}
-{% endif %}
-
-<a href="{{ path }}">Back</a>

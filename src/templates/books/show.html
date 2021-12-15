@@ -6,16 +6,18 @@
     <nav class="top-banner">
         <ul>
             <li> 
-                <a title="Go to previous page" href="/books">Back</a>
+                <a title="Go to previous page" href="/books">
+                    <i class="fa fa-hand-o-left"></i>
+                </a>
             </li>
             <li>
-                <a title="Create new book entry" href="/books/new">New</a>
+                <a title="Create new entry" href="/books/new">New</a>
             </li>
             <li>
                 <a title="Edit current entry" href="{{ request.path }}/edit">Edit</a>
             </li>
             <li>
-                <form title="Delete current entry" action="{{ request.path }}/delete " method='POST'>
+                <form class="delete-btn" title="Delete current entry" action="{{ request.path }}/delete" method='POST'>
                     <input class="text-shadow" type="submit" value="Delete">
                 </form>    
             </li>
@@ -45,20 +47,20 @@
                 <li>ISBN: {{ book.isbn }}</li>
                 <li>Title: {{ book.title }} <i>({{ book.edition }} Ed.)</i></li>
                 <hr>
-                <li>Author: <a href=" /authors/{{ book.author.id }}">{{ book.author.name }}</a></li>
-                <li>Illustrated by: <a href=" /authors/{{ book.author.id }}">{{ book.illustrator.name }} </a></li>
-                <li>Publisher:<a href=" /publishers/{{ book.publisher.id }}">{{ book.publisher.name }}</a></li>
+                <li>Author: <a href="/authors/{{ book.author.id }}">{{ book.author.name }}</a></li>
+                <li>Illustrated by: <a href="/authors/{{ book.author.id }}">{{ book.illustrator.name }} </a></li>
+                <li>Publisher:<a href="/publishers/{{ book.publisher.id }}">{{ book.publisher.name }}</a></li>
                 <li>Genre: {{ book.genre }}</li>
             </div>
             <div class="card-item card-show_template">
                 <ul><b>Other works by author:</b></ul>
                 {% for book in author_books %}
-                <li><a href="books/{{ book.id }}">{{ book.title }} <i>({{ book.edition }} Ed.)</i></a></li>
+                <li><a href="/books/{{ book.id }}">{{ book.title }} <i>({{ book.edition }} Ed.)</i></a></li>
                 {% endfor %}
                 <hr>
                 <ul><b>Other works by publisher:</b></ul>
                 {% for book in publisher_books %}
-                <li><a href="books/{{ book.id }}">{{ book.title }} <i>({{ book.edition }} Ed.)</i></a></li>
+                <li><a href="/books/{{ book.id }}">{{ book.title }} <i>({{ book.edition }} Ed.)</i></a></li>
                 {% endfor %}
             </div>
         </div>

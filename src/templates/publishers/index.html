@@ -2,10 +2,20 @@
 
 {% block content %}
 
+
+<div class="top-banner-wrapper bg-dark text-shadow">
+    <span class="banner-title">Publishers</span>
+    <nav class="top-banner">
+        <ul>
+            <li>
+                <a title="Create new entry" href="/publishers/new">New</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
 <div class="container publisher">
-    
-    {% include 'components/new_button.html' %}
-    <h2>List of publishers:</h2>
+        <h2>List of publishers:</h2>
     <ul>
         {% for publisher in publishers %}
         <li><a href="{{ request.path }}/{{ publisher.id }}"> {{ publisher.name }} </a></li>

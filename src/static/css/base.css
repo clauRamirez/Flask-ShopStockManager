@@ -83,11 +83,11 @@ body > header > footer {
 /* Main layout */
 
 main {
-    background-color: var(--bg-colour-blank);
-    padding: 2vh 2vw;
+    padding: 3vh 3vw;
 }
 
 main > .content-wrapper {
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;    
     height: 100%;
     width: 100%;
     border: solid 1px red;
@@ -98,7 +98,7 @@ main > .content-wrapper {
 /* Utils */
 
 .container {
-    padding: 4vh 8vw;
+    padding: 2vh 5vw;
     margin: 0;
 }
 

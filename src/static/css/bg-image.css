@@ -1,0 +1,29 @@
+/* Background image for main tag */
+
+main.bg-img-1{
+    background-image: url('../img/akira.jpeg');
+}
+
+main.bg-img-2{
+    background-image: url('../img/charles-burns.jpeg');
+}
+
+main.bg-img-3{
+    background-image: url('../img/ghost-world.jpeg');
+}
+
+main.bg-img-4{
+    background-image: url('../img/comic2.jpeg');
+}
+
+main.bg-img-5{
+    background-image: url('../img/tillie-walden.jpeg');
+}
+
+main.bg-img-6{
+    background-image: url('../img/comic3.jpg');
+}
+
+main.bg-img {
+    background: inherit right cover repeat;
+}

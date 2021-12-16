@@ -114,10 +114,10 @@ def filter(filter: str, search_param: Any) -> List[Book]:
             sql = f"\
                 SELECT * FROM books WHERE {filter}=%s ORDER BY title"
             search_param = search_param.capitalize()
-        else:
+        if filter == 'publisher' or filter == 'author':
             sql = f"\
                 SELECT * FROM books WHERE {filter}_id=%s ORDER BY title"
-    except ValueError('Wrong filter argument') as error:
+    except ValueError('Wrong values passed to function') as error:
         print(error)
     finally:
         return [

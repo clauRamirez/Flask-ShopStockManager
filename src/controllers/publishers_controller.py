@@ -18,9 +18,7 @@ def publishers_index():
         
     if request.method == 'POST':
         rf = request.form
-        # make this block less clunky
-        # change Publisher constructor to salesperson=None, contact=None
-        # make database store just null values, print 'no salesperson etc' in views only
+
         if rf['salesperson'] == '':
             publisher_repository.save(
                 Publisher(

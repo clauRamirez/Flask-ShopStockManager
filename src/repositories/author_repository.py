@@ -120,13 +120,13 @@ def filter_authors(id: int) -> Tuple[Book, Book]:
         '''
         
         books_by_author=get_books_by_author(select(id))
-        books_by_illustrator=get_books_by_illustrator(select(id)),
+        books_by_illustrator=get_books_by_illustrator(select(id))
 
-        books_by_illustrator_filtered = list(books_by_illustrator[0]).copy()
+        books_by_illustrator_filtered = books_by_illustrator.copy()
         
-        for book in books_by_illustrator[0]:
+        for book in books_by_illustrator:
             for i in books_by_author:
                 if book.id == i.id:
                     books_by_illustrator_filtered.pop(books_by_illustrator_filtered.index(book))
-
+            
         return books_by_author, books_by_illustrator_filtered

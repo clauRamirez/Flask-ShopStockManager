@@ -113,7 +113,7 @@ main > .content-wrapper {
 /* Utils */
 
 .container {
-    background-color: var(--bg-colour);
+    background-color: #fffffff6;
     margin: 2vh 2vw;
     padding: 1vh 1vw;
     border-radius: 3px;

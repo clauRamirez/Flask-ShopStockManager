@@ -33,10 +33,8 @@ class Book:
         return f"Book: {{ \
             id: {self.id}, isbn: {self.isbn}, title: {self.title}, genre: {self.genre}, \
             author: {self.author}, illustrator: {self.illustrator}, publisher: {self.publisher}, \
-            edition: {self.edition}, cost: {self.cost}, price: {self.price}, stock: {self.stock} }}"
-            
-    def __str__(self) -> str:
-        return self.__repr__
+            edition: {self.edition}, cost: {self.cost}, price: {self.price}, stock: {self.stock} \
+        }}"
     
     def get_mark_up(self) -> float:
         return round(self.price - self.cost, 2)

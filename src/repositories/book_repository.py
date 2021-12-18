@@ -109,41 +109,37 @@ def filter(filter: str, search_param: Any) -> List[Book]:
     @return List of Book objects filtered by @filter
     '''
     
-    try:
-        if filter == 'genre':
-            sql = f"\
-                SELECT * FROM books WHERE {filter}=%s ORDER BY title"
-            search_param = search_param.capitalize()
-        if filter == 'publisher' or filter == 'author':
-            sql = f"\
-                SELECT * FROM books WHERE {filter}_id=%s ORDER BY title"
-    except ValueError('Wrong values passed to function') as error:
-        print(error)
-    finally:
-        return [
-            Book(
-                isbn=row['isbn'],
-                title=row['title'],
-                genre=row['genre'],
-                author=author_repository.select(row['author_id']),
-                illustrator=author_repository.select(row['illustrator_id']),
-                publisher=publisher_repository.select(row['publisher_id']),
-                edition=row['edition'],
-                cost=row['cost'],
-                price=row['price'],
-                stock=row['stock'],
-                id=row['id']
-            ) for row in run_sql(
-                sql=sql,
-                values=[search_param]
-            )
-        ]
+    if filter == 'genre':
+        sql = f"\
+            SELECT * FROM books WHERE {filter}=%s ORDER BY title"
+        search_param = search_param.capitalize()
+        
+    if filter == 'publisher' or filter == 'author':
+        sql = f"\
+            SELECT * FROM books WHERE {filter}_id=%s ORDER BY title"
+
+    return [
+        Book(
+            isbn=row['isbn'],
+            title=row['title'],
+            genre=row['genre'],
+            author=author_repository.select(row['author_id']),
+            illustrator=author_repository.select(row['illustrator_id']),
+            publisher=publisher_repository.select(row['publisher_id']),
+            edition=row['edition'],
+            cost=row['cost'],
+            price=row['price'],
+            stock=row['stock'],
+            id=row['id']
+        ) for row in run_sql(
+            sql=sql,
+            values=[search_param]
+        )
+    ]
 
 
 def get_genres() -> List[str]:
-    lst = []
 
-    for row in select_all():
-        lst.append(row.genre)
-
-    return sorted(list(set(lst)))
+    return sorted(list(set([
+        book.genre for book in select_all()
+    ])))

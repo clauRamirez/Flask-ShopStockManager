@@ -266,10 +266,11 @@ for book in books:
     book_repository.save(book)
 
 for row in author_repository.select_all():
-    print(row.__dict__)
+    print(row)
 
 for row in publisher_repository.select_all():
-    print(row.__dict__)
+    print(row)
 
 for row in book_repository.select_all():
-    print(row.__dict__)
+    print(row)
+

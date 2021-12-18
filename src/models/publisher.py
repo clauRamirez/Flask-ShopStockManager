@@ -15,7 +15,6 @@ class Publisher:
         
     def __repr__(self) -> str:
         return f"Publisher: {{id: {self.id}, name: {self.name}, website: {self.website}, \
-            salesperson: {self.salesperson}, contact: {self.contact}}}"
+            salesperson: {self.salesperson}, contact: {self.contact} \
+        }}"
             
-    def __str__(self) -> str:
-        return self.__repr__

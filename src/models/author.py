@@ -6,5 +6,3 @@ class Author:
     def __repr__(self) -> str:
         return f"Author: {{id: {self.id}, name: {self.name}}}"
     
-    def __str__(self) -> str:
-        return self.__repr__

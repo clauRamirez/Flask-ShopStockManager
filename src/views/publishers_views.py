@@ -2,10 +2,11 @@ from flask import render_template, redirect, request
 from flask import Blueprint
 from models.publisher import Publisher
 from repositories import publisher_repository
+from views.utils import get_title
 
 publishers_blueprint = Blueprint("publishers", __name__)
 
-_title = 'Publishers'
+_title = get_title(__file__)
 
 @publishers_blueprint.route("/publishers", methods=['GET', 'POST'])
 def publishers_index():

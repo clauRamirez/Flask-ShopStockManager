@@ -2,10 +2,11 @@ from flask import render_template, redirect, request
 from flask import Blueprint
 from models.author import Author
 from repositories import author_repository
+from views.utils import get_title
 
 authors_blueprint = Blueprint("authors", __name__)
 
-_title = "Authors"
+_title = get_title(__file__)
 
 @authors_blueprint.route("/authors", methods=['GET', 'POST'])
 def authors_index():

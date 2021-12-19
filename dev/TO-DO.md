@@ -16,7 +16,7 @@
 #### SETUP
 - [x] Push to git
 - [x] Create directories and files
-- [ ] README.md
+- [x] README.md
 
 #### DB AND MODELS
 - [x] Database
@@ -41,21 +41,19 @@
 #### TEMPLATES
 - [x] Display information properly
 - [x] Style
-- [ ] Change ALL urls to absolute paths unless properly tested
+- [x] Change ALL urls to absolute paths unless properly tested
 
 #### COMPONENT
-- [ ] Remove components
+- [x] Remove components
 
 #### LAYOUT
 - [x] /books/index.html
 - [x] /books/view.html
-- [ ] buttons on top of every view
+- [x] buttons on top of every view
 
 #### STYLING
-- [ ] Theme.css for colours variables, fonts etc
 - [x] cards.css for colours of cards depending on 
-- [ ] banner.css for banner that is red or something if low stock
-it will show stock and other info as per wireframe
+- [x] banner.css for banner that is red or something if low stock it will show stock and other info as per wireframe
 
 ### Brainstorming
 

@@ -6,9 +6,9 @@ app = Flask(__name__)
 app.url_map.strict_slashes = False
 
 
-from controllers.authors_controller import authors_blueprint
-from controllers.books_controller import books_blueprint
-from controllers.publishers_controller import publishers_blueprint
+from views.authors_views import authors_blueprint
+from views.books_views import books_blueprint
+from views.publishers_views import publishers_blueprint
 
 app.register_blueprint(authors_blueprint)
 app.register_blueprint(books_blueprint)

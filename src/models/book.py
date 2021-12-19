@@ -15,7 +15,7 @@ class Book:
         price: float,
         stock: int,
         id = None
-    ):
+    ) -> None:
 
         self.isbn = isbn
         self.title = title

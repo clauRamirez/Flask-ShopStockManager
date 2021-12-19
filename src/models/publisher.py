@@ -6,7 +6,7 @@ class Publisher:
         salesperson: str = "No salesperson, order via website",
         contact: str = None,
         id: int = None
-    ):
+    ) -> None:
         self.name = name
         self.website = website
         self.salesperson = salesperson

@@ -2,7 +2,7 @@ from db.run_sql import run_sql
 from models.author import Author
 from models.book import Book
 from repositories import publisher_repository
-from typing import List, Tuple
+from typing import List, Tuple, Optional
 
 
 def save(author: Author) -> None:
@@ -15,7 +15,7 @@ def save(author: Author) -> None:
     author.id = results[0]['id']
 
 
-def select(id: int) -> Author:
+def select(id: int) -> Optional[Author]:
     results = run_sql(
         sql="SELECT * FROM authors WHERE id = %s;",
         values=[id]
@@ -107,7 +107,7 @@ def get_books_by_illustrator(illustrator: Author) -> List[Book]:
     ]
     
     
-def filter_authors(id: int) -> Tuple[Book, Book]:
+def filter_authors(id: int) -> Tuple[List[Book], List[Book]]:
         '''Filters between authors that are only authors or writers, 
         authors that are only illustrators, and those that are both.
         

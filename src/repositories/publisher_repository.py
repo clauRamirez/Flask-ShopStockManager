@@ -2,7 +2,7 @@ from db.run_sql import run_sql
 from models.publisher import Publisher
 from models.book import Book
 from repositories import author_repository
-from typing import List
+from typing import List, Optional
 
 
 def save(publisher: Publisher) -> None:
@@ -20,11 +20,12 @@ def save(publisher: Publisher) -> None:
     publisher.id = results[0]['id']
 
 
-def select(id: int) -> Publisher:
+def select(id: int) -> Optional[Publisher]:
     results = run_sql(
         sql="SELECT * FROM publishers WHERE id = %s;",
         values=[id]
     )
+    
     if results[0] is not None:
         res = results[0]
         return Publisher(
@@ -34,6 +35,7 @@ def select(id: int) -> Publisher:
             contact=res['contact'],
             id=id
         )
+
 
 
 def delete(id: int) -> None:

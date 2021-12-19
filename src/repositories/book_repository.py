@@ -1,7 +1,7 @@
 from db.run_sql import run_sql
 from models.book import Book
 from repositories import author_repository, publisher_repository
-from typing import List, Any
+from typing import List, Any, Optional
 
 
 def save(book: Book) -> None:
@@ -25,7 +25,7 @@ def save(book: Book) -> None:
     book.id = results[0]['id']
 
 
-def select(id: int) -> Book:
+def select(id: int) -> Optional[Book]:
     results = run_sql(
         sql="SELECT * FROM books WHERE id = %s;",
         values=[id]

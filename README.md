@@ -51,7 +51,7 @@ To run a demo locally, in your terminal:
 
 1. Clone the repository
 ```
-git clone https://github.com/clauRamirez/Flask_shop_inventory_manager
+git clone https://github.com/clauRamirez/flask_inventory_manager
 ```
 2. Go to project directory and cd into /src directory:
 ```

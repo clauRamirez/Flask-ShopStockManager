@@ -57,8 +57,6 @@
 
 ### Brainstorming
 
-- Create utility function to see which title_name (maybe other stuff)
-depending on blueprint,
 - Pass title variable into every route
 - Make salesperson to be empty if not needed instead of the "no salesperson
 ordern from website" thing, and make the app render that into browser 
@@ -67,9 +65,6 @@ and also we'll be able to change publishers_controller clunky bit
 - ISBN is integer but it needs to also accept leading 0 so figure that out
 - ISBN is a VARCHAR now but will it let it be the id and controllers
 accept it as param for searches????
-- Add models __repr__ and that stuff
-- Add errors and error handling
-- Add custom 404
 
 #### SQL
 

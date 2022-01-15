@@ -1,5 +1,5 @@
 # current working tree
 
--   [ ] Add dev environment
+-   [x] Add dev environment
 -   [ ] Add runner script
--   [ ] Update gitignore
+-   [x] Update gitignore

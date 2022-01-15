@@ -13,7 +13,7 @@ class TestBook(unittest.TestCase):
             website='www.examp.le',
         )
         self.book = Book(
-            ISBN=111222333,
+            isbn="11222333",
             title='Some Book',
             genre='Horror',
             author=self.author,

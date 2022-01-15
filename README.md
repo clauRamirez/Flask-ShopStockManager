@@ -71,7 +71,7 @@ psql -d shop_inventory -f db/shop_inventory.sql
 ```
 6. Populate database
 ```
-python3 console.py
+python3 populate_db.py
 ```
 7. Run the flask application
 ```

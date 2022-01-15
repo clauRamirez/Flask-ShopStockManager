@@ -4,6 +4,8 @@
 ![HTML](https://img.shields.io/badge/HTML5-E34F26??style=appveyor&logo=html5&logoColor=white+)
 ![CSS](https://img.shields.io/badge/CSS3-1572B6??&style=appveyor&logo=css3&logoColor=white)
 
+**This project is still under development in [this branch](https://github.com/clauRamirez/flask_inventory_manager/tree/working)**
+
 ## Overview
 
 Final project for the Python module at the Professional Software Development Bootcamp by CodeClan.

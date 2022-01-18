@@ -5,6 +5,7 @@
 ![CSS](https://img.shields.io/badge/CSS3-1572B6??&style=appveyor&logo=css3&logoColor=white)
 
 **This branch shows the project as handed in for the final project for the Python module at CodeClan**
+
 **It is still under development in [this branch](https://github.com/clauRamirez/flask_inventory_manager/tree/working)**
 
 ## Overview

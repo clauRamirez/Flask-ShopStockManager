@@ -1,10 +1,11 @@
-![Python](https://img.shields.io/badge/python-v3.9+-blue.svg?style=appveyor)
-![Flask](https://img.shields.io/badge/Flask-2.0.2+-black?style=appveyor&logo=flask&logoColor=white?)
+![Python](https://img.shields.io/badge/python-v3.5+-blue.svg?style=appveyor)
+![Flask](https://img.shields.io/badge/Flask-v2.0.2+-black?style=appveyor&logo=flask&logoColor=white?)
 ![PostgresQL](https://img.shields.io/badge/PostgreSQL-v14.0-red?style=appveyor&logo=postgresql&logoColor=white)
 ![HTML](https://img.shields.io/badge/HTML5-E34F26??style=appveyor&logo=html5&logoColor=white+)
 ![CSS](https://img.shields.io/badge/CSS3-1572B6??&style=appveyor&logo=css3&logoColor=white)
 
-**This project is still under development in [this branch](https://github.com/clauRamirez/flask_inventory_manager/tree/working)**
+**This branch shows the project as handed in for the final project for the Python module at CodeClan**
+**It is still under development in [this branch](https://github.com/clauRamirez/flask_inventory_manager/tree/working)**
 
 ## Overview
 

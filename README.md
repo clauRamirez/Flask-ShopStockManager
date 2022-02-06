@@ -4,9 +4,9 @@
 ![HTML](https://img.shields.io/badge/HTML5-E34F26??style=appveyor&logo=html5&logoColor=white+)
 ![CSS](https://img.shields.io/badge/CSS3-1572B6??&style=appveyor&logo=css3&logoColor=white)
 
-**This branch shows the project as handed in for the final project for the Python module at CodeClan**
-
-**It is still under development in [this branch](https://github.com/clauRamirez/flask_inventory_manager/tree/working)**
+1. [Project brief](https://github.com/clauRamirez/flask-inventory-manager#project-brief)
+2. [Demo](https://github.com/clauRamirez/flask-inventory-manager#demo)
+3. [TO-DO](https://github.com/clauRamirez/flask-inventory-manager#to-do)
 
 ## Overview
 
@@ -16,7 +16,7 @@ Full-Stack web application built with Flask, Postgres, Python3, HTML5 and CSS3 w
 
 <br>
 
-## Project brief
+## 1. Project brief
 
 #### **Shop Inventory**
 
@@ -49,7 +49,7 @@ It must **NOT** use:
 
 <br>
 
-## Setup For Demo
+## 2. Demo
 
 To run a demo locally, in your terminal:
 
@@ -102,3 +102,7 @@ app is running on in your local machine.
 10. Have fun!
 
 <br>
+
+## 3. TO-DO
+
+- [ ] Add setup script

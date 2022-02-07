@@ -53,6 +53,9 @@ It must **NOT** use:
 
 To run a demo locally, in your terminal:
 
+0. Prerequisites
+- Python3+.
+- PSQL client
 1. Clone the repository
 
 ```

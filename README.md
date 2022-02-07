@@ -1,8 +1,12 @@
-![Python](https://img.shields.io/badge/python-v3.9+-blue.svg?style=appveyor)
-![Flask](https://img.shields.io/badge/Flask-2.0.2+-black?style=appveyor&logo=flask&logoColor=white?)
+![Python](https://img.shields.io/badge/python-v3.5+-blue.svg?style=appveyor)
+![Flask](https://img.shields.io/badge/Flask-v2.0.2+-black?style=appveyor&logo=flask&logoColor=white?)
 ![PostgresQL](https://img.shields.io/badge/PostgreSQL-v14.0-red?style=appveyor&logo=postgresql&logoColor=white)
 ![HTML](https://img.shields.io/badge/HTML5-E34F26??style=appveyor&logo=html5&logoColor=white+)
 ![CSS](https://img.shields.io/badge/CSS3-1572B6??&style=appveyor&logo=css3&logoColor=white)
+
+1. [Project brief](https://github.com/clauRamirez/flask-inventory-manager#1-project-brief)
+2. [Demo](https://github.com/clauRamirez/flask-inventory-manager#2-demo)
+3. [TO-DO](https://github.com/clauRamirez/flask-inventory-manager#3-to-do)
 
 ## Overview
 
@@ -12,7 +16,7 @@ Full-Stack web application built with Flask, Postgres, Python3, HTML5 and CSS3 w
 
 <br>
 
-## Project brief
+## 1. Project brief
 
 #### **Shop Inventory**
 
@@ -45,7 +49,7 @@ It must **NOT** use:
 
 <br>
 
-## Setup For Demo
+## 2. Demo
 
 To run a demo locally, in your terminal:
 
@@ -98,3 +102,7 @@ app is running on in your local machine.
 10. Have fun!
 
 <br>
+
+## 3. TO-DO
+
+- [ ] Add setup script

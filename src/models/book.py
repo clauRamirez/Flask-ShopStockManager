@@ -1,5 +1,6 @@
-from src.models.author import Author
-from src.models.publisher import Publisher
+from models.author import Author
+from models.publisher import Publisher
+
 
 class Book:
     def __init__(
@@ -14,7 +15,7 @@ class Book:
         cost: float,
         price: float,
         stock: int,
-        id = None
+        id=None
     ) -> None:
 
         self.isbn = isbn
@@ -28,14 +29,13 @@ class Book:
         self.price = price
         self.stock = stock
         self.id = id
-    
+
     def __repr__(self) -> str:
         return f"Book: {{ \
             id: {self.id}, isbn: {self.isbn}, title: {self.title}, genre: {self.genre}, \
             author: {self.author}, illustrator: {self.illustrator}, publisher: {self.publisher}, \
             edition: {self.edition}, cost: {self.cost}, price: {self.price}, stock: {self.stock} \
         }}"
-    
+
     def get_mark_up(self) -> float:
         return round(self.price - self.cost, 2)
-    

@@ -28,5 +28,3 @@ CREATE TABLE books (
     price NUMERIC NOT NULL,
     stock INT NOT NULL
 );
-
-`

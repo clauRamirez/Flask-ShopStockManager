@@ -20,7 +20,8 @@ otomo = Author(name="Katsuhiro Otomo")
 spiegelman = Author(name="Art Spiegelman")
 satrapi = Author(name="Marjane Satrapi")
 
-authors = [burns, clowes, walden, kabi, moore, gibbons, otomo, spiegelman, satrapi]
+authors = [burns, clowes, walden, kabi, moore,
+           gibbons, otomo, spiegelman, satrapi]
 
 for author in authors:
     author_repository.save(author)
@@ -211,7 +212,7 @@ books = [
         price=24.99,
         stock=0
     ),
-        Book(
+    Book(
         isbn="1935429078",
         title="Akira, vol. 5",
         genre="Manga",
@@ -264,13 +265,3 @@ books = [
 
 for book in books:
     book_repository.save(book)
-
-for row in author_repository.select_all():
-    print(row)
-
-for row in publisher_repository.select_all():
-    print(row)
-
-for row in book_repository.select_all():
-    print(row)
-

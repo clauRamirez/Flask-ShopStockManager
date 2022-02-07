@@ -3,7 +3,4 @@ __pycache__/
 venv/
 instance/
 .webassets-cache
-
-
-# Files under development
-/scripts/_setup*
+.env

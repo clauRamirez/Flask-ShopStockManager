@@ -31,11 +31,4 @@ echo_red "Starting up Flask application"
 open "http://127.0.0.1:5000/"
 python3 -m flask run
 
-# CLEAN UP
-echo_red "Cleaning up virtual environment..."
-deactivate
-dropdb shop_inventory
-rm -rf ./venv
-rm ./.env
-
 exit 0

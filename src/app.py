@@ -1,3 +1,6 @@
+from src.views.publishers_views import publishers_blueprint
+from src.views.books_views import books_blueprint
+from src.views.authors_views import authors_blueprint
 from flask import Flask
 from flask import render_template, request, redirect
 
@@ -6,10 +9,6 @@ app = Flask(__name__)
 app.url_map.strict_slashes = False
 
 
-from views.authors_views import authors_blueprint
-from views.books_views import books_blueprint
-from views.publishers_views import publishers_blueprint
-
 app.register_blueprint(authors_blueprint)
 app.register_blueprint(books_blueprint)
 app.register_blueprint(publishers_blueprint)
@@ -17,7 +16,7 @@ app.register_blueprint(publishers_blueprint)
 
 @app.before_request
 def clear_trailing():
-    rp = request.path 
+    rp = request.path
     if rp != '/' and rp.endswith('/'):
         return redirect(rp[:-1])
 
